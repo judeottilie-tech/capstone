@@ -1,0 +1,115 @@
+{
+  "artists": [
+    {
+      "id": 1,
+      "fullName": "Jude Andersen",
+      "email": "jude@art.com",
+      "username": "bigkitty",
+      "bio": "Digital artist specializing in pet portraits and character design.",
+      "profileLink": "https://instagram.com/bigkitty"
+    },
+    {
+      "id": 2,
+      "fullName": "Punch Art",
+      "email": "punch@art.com",
+      "username": "punch",
+      "bio": "Traditional and digital illustrator.",
+      "profileLink": "https://instagram.com/punch"
+    }
+  ],
+  "commissions": [
+    {
+      "id": 1,
+      "artistId": 1,
+      "title": "Pet Portraits",
+      "description": "Portraits of your beloved pet!",
+      "price": 50,
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/5aa422c889c172a8168760de/1606241189344-1B3P3CEEJMNQPCGTKNVJ/custom_watercolor_bernese_mountain+dog.jpg",
+      "slots": 5,
+      "isActive": true,
+      "isClosed": false
+    },
+    {
+      "id": 2,
+      "artistId": 1,
+      "title": "Character Design",
+      "description": "Full character design with front and back view.",
+      "price": 120,
+      "imageUrl": "https://cdnb.artstation.com/p/assets/images/images/028/981/357/large/meredith-park-tiffany-final.jpg",
+      "slots": 3,
+      "isActive": true,
+      "isClosed": false
+    },
+    {
+      "id": 3,
+      "artistId": 2,
+      "title": "Landscape Illustrations",
+      "description": "Custom landscape scenes in watercolor style.",
+      "price": 80,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/24701-nature-natural-beauty.jpg/1280px-24701-nature-natural-beauty.jpg",
+      "slots": 0,
+      "isActive": true,
+      "isClosed": true
+    }
+  ],
+  "proposals": [
+    {
+      "id": 1,
+      "commissionTypeId": 1,
+      "name": "Jack",
+      "email": "jack@gmail.com",
+      "date": "2026-03-15",
+      "priceRange": "50-100",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "commissionTypeId": 1,
+      "name": "Sara",
+      "email": "sara@gmail.com",
+      "date": "2026-03-18",
+      "priceRange": "40-60",
+      "status": "accepted"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "pet"
+    },
+    {
+      "id": 2,
+      "name": "digital"
+    },
+    {
+      "id": 3,
+      "name": "character design"
+    },
+    {
+      "id": 4,
+      "name": "watercolor"
+    }
+  ],
+  "commissionTags": [
+    {
+      "id": 1,
+      "commissionTypeId": 1,
+      "tagId": 1
+    },
+    {
+      "id": 2,
+      "commissionTypeId": 1,
+      "tagId": 2
+    },
+    {
+      "id": 3,
+      "commissionTypeId": 2,
+      "tagId": 3
+    },
+    {
+      "id": 4,
+      "commissionTypeId": 3,
+      "tagId": 4
+    }
+  ]
+}

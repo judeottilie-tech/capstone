@@ -1,15 +1,5 @@
 //similar to editpost, prepopulate form w existing values
 
-import {
-  getCommissionById,
-  updateCommission,
-} from "../../services/commissionService"
-import { createTag, getTagByName } from "../../services/tagService"
-import {
-  createCommissionTag,
-  deleteCommissionTag,
-} from "../../services/commissionTagService"
-
 import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import {
