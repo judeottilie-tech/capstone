@@ -89,6 +89,22 @@
     height: 22px;
   }
 
+  .gallery-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .gallery-card {
+    width: 250px;
+  }
+
+  .gallery {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
   @media (max-width: 1024px) {
     flex-direction: column;
     text-align: center;

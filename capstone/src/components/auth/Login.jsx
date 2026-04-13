@@ -22,6 +22,7 @@ export const Login = () => {
           "portfolio_artist",
           JSON.stringify({
             id: artist.id,
+            username: artist.username,
           }),
         )
         navigate("/")

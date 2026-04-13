@@ -2,11 +2,11 @@
   "artists": [
     {
       "id": 1,
-      "fullName": "Jude Andersen",
+      "fullName": "Jude!",
       "email": "jude@art.com",
-      "username": "bigkitty",
-      "bio": "Digital artist specializing in pet portraits and character design.",
-      "profileLink": "https://instagram.com/bigkitty"
+      "username": "judeottilie",
+      "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
+      "profileLink": "https://instagram.com/judeottilie"
     },
     {
       "id": 2,
@@ -15,101 +15,174 @@
       "username": "punch",
       "bio": "Traditional and digital illustrator.",
       "profileLink": "https://instagram.com/punch"
+    },
+    {
+      "id": 3,
+      "fullName": "Luna Sketch",
+      "email": "luna@art.com",
+      "username": "lunasketch",
+      "bio": "Soft anime-style commissions and character art.",
+      "profileLink": "https://instagram.com/lunasketch"
+    },
+    {
+      "id": 4,
+      "fullName": "InkForge",
+      "email": "ink@art.com",
+      "username": "inkforge",
+      "bio": "Dark fantasy and tattoo-style illustrations.",
+      "profileLink": "https://instagram.com/inkforge"
     }
   ],
   "commissions": [
     {
-      "id": 1,
-      "artistId": 1,
-      "title": "Pet Portraits",
-      "description": "Portraits of your beloved pet!",
-      "price": 50,
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/5aa422c889c172a8168760de/1606241189344-1B3P3CEEJMNQPCGTKNVJ/custom_watercolor_bernese_mountain+dog.jpg",
-      "slots": 5,
-      "isActive": true,
-      "isClosed": false
-    },
-    {
       "id": 2,
-      "artistId": 1,
-      "title": "Character Design",
-      "description": "Full character design with front and back view.",
-      "price": 120,
-      "imageUrl": "https://cdnb.artstation.com/p/assets/images/images/028/981/357/large/meredith-park-tiffany-final.jpg",
-      "slots": 3,
-      "isActive": true,
-      "isClosed": false
+      "artistId": 2,
+      "title": "Landscape Illustration",
+      "price": 80,
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/24701-nature-natural-beauty.jpg/1280px-24701-nature-natural-beauty.jpg"
     },
     {
       "id": 3,
-      "artistId": 2,
-      "title": "Landscape Illustrations",
-      "description": "Custom landscape scenes in watercolor style.",
-      "price": 80,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/24701-nature-natural-beauty.jpg/1280px-24701-nature-natural-beauty.jpg",
-      "slots": 0,
-      "isActive": true,
-      "isClosed": true
-    }
-  ],
-  "proposals": [
-    {
-      "id": 1,
-      "commissionTypeId": 1,
-      "name": "Jack",
-      "email": "jack@gmail.com",
-      "date": "2026-03-15",
-      "priceRange": "50-100",
-      "status": "pending"
+      "artistId": 3,
+      "title": "Anime Character",
+      "price": 90,
+      "imageUrl": "https://via.placeholder.com/400x400.png?text=Anime+Art"
     },
     {
-      "id": 2,
-      "commissionTypeId": 1,
-      "name": "Sara",
-      "email": "sara@gmail.com",
-      "date": "2026-03-18",
-      "priceRange": "40-60",
-      "status": "accepted"
+      "id": 4,
+      "artistId": 4,
+      "title": "Tattoo Design",
+      "price": 120,
+      "imageUrl": "https://via.placeholder.com/400x400.png?text=Tattoo+Design"
+    },
+    {
+      "title": "Pet",
+      "price": 65,
+      "imageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-41_orig.png",
+      "artistId": 1,
+      "id": 5,
+      "commissionTags": [],
+      "isActive": true
     }
   ],
   "tags": [
     {
       "id": 1,
-      "name": "pet"
-    },
-    {
-      "id": 2,
       "name": "digital"
     },
     {
+      "id": 2,
+      "name": "traditional"
+    },
+    {
       "id": 3,
-      "name": "character design"
+      "name": "mixed media"
     },
     {
       "id": 4,
+      "name": "clay"
+    },
+    {
+      "id": 5,
+      "name": "sculpture"
+    },
+    {
+      "id": 6,
+      "name": "animated"
+    },
+    {
+      "id": 7,
+      "name": "illustration"
+    },
+    {
+      "id": 8,
+      "name": "graphic design"
+    },
+    {
+      "id": 9,
+      "name": "icon"
+    },
+    {
+      "id": 10,
+      "name": "logo"
+    },
+    {
+      "id": 11,
+      "name": "pet"
+    },
+    {
+      "id": 12,
+      "name": "portrait"
+    },
+    {
+      "id": 13,
+      "name": "couple portrait"
+    },
+    {
+      "id": 14,
+      "name": "character"
+    },
+    {
+      "id": 15,
+      "name": "fantasy"
+    },
+    {
+      "id": 16,
       "name": "watercolor"
+    },
+    {
+      "id": 17,
+      "name": "anime"
+    },
+    {
+      "id": 18,
+      "name": "tattoo design"
+    },
+    {
+      "id": 19,
+      "name": "tattoo flash"
     }
   ],
   "commissionTags": [
     {
       "id": 1,
-      "commissionTypeId": 1,
-      "tagId": 1
-    },
-    {
-      "id": 2,
-      "commissionTypeId": 1,
+      "commissionId": 2,
       "tagId": 2
     },
     {
+      "id": 2,
+      "commissionId": 2,
+      "tagId": 16
+    },
+    {
       "id": 3,
-      "commissionTypeId": 2,
-      "tagId": 3
+      "commissionId": 3,
+      "tagId": 1
     },
     {
       "id": 4,
-      "commissionTypeId": 3,
-      "tagId": 4
+      "commissionId": 5,
+      "tagId": 1
+    },
+    {
+      "id": 5,
+      "commissionId": 5,
+      "tagId": 2
+    },
+    {
+      "commissionId": 5,
+      "tagId": 11,
+      "id": 6
+    },
+    {
+      "commissionId": 5,
+      "tagId": 7,
+      "id": 7
+    },
+    {
+      "commissionId": 5,
+      "tagId": 11,
+      "id": 8
     }
   ]
 }

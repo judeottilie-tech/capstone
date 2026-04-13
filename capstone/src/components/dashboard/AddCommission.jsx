@@ -2,40 +2,48 @@
 
 //list of artist commission types w edit/delete/toggle, list of incoming proposals, base on MyPosts and delete on deletePost
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { createCommission } from "../../services/commissionService"
-import { createTag, getTagByName } from "../../services/tagService"
 import { createCommissionTag } from "../../services/commissionTagService"
+import { getTags } from "../../services/tagService"
 import { useNavigate } from "react-router-dom"
 
 export const AddCommission = ({ currentArtist }) => {
+  const navigate = useNavigate()
   const [commission, setCommission] = useState({
     title: "",
     price: 0,
     imageUrl: "",
   })
+  const [tags, setTags] = useState([])
+  const [selectedTagIds, setSelectedTagIds] = useState([])
 
-
-  const navigate = useNavigate()
+  useEffect(() => {
+    getTags().then(setTags)
+  }, [])
 
   const handleSave = (event) => {
     event.preventDefault()
 
-    if (
-      commission.title &&
-      commission.price &&
-      commission.imageUrl 
-    ) {
+    if (commission.title && commission.price && commission.imageUrl) {
       const newCommission = {
         title: commission.title,
         price: parseFloat(commission.price),
         imageUrl: commission.imageUrl,
         artistId: currentArtist.id,
       }
-      return handleSave()
+
+      createCommissionTag({
+        commissionId: createdCommission.id, 
+        tagId: tagId,
+      })
+
+        Promise.all(tagPromises).then(() => {
+          navigate("/dashboard")
+        })
+      })
     }
   }
-
                 
 
   return (
@@ -83,7 +91,6 @@ export const AddCommission = ({ currentArtist }) => {
         </div>
       </fieldset>
 
-
       <fieldset>
         <div className="form-group">
           <button className="form-btn btn-info" onClick={handleSave}>
@@ -91,6 +98,27 @@ export const AddCommission = ({ currentArtist }) => {
           </button>
         </div>
       </fieldset>
+
+      {tags.map((tag) => {
+        return (
+          <div key={tag.id}>
+            <input
+              type="checkbox"
+              value={tag.id}
+              onChange={(event) => {
+                const tagId = parseInt(event.target.value)
+
+                if (event.target.checked) {
+                  setSelectedTagIds([...selectedTagIds, tagId])
+                } else {
+                  setSelectedTagIds(selectedTagIds.filter((id) => id !== tagId))
+                }
+              }}
+            />
+            <label>{tag.name}</label>
+          </div>
+        )
+      })}
     </form>
   )
 }

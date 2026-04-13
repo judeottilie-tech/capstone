@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { getArtistByUsername } from "../../services/artistService"
 import { getCommissionsByArtist } from "../../services/commissionService"
+import "../../App.css"
 
 export const ArtistProfile = ({ currentArtist }) => {
     const { username } = useParams()

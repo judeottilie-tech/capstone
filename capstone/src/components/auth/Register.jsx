@@ -25,6 +25,7 @@ export const Register = () => {
           "portfolio_artist",
           JSON.stringify({
             id: createdArtist.id,
+            username: createdArtist.username,
           }),
         )
 

@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import {
-  getCommissionsByArtist,
-  deleteCommission,
-  updateCommission,
-} from "../../services/commissionService"
-import { updateProposal } from "../../services/proposalService"
+import { getCommissionsByArtist, deleteCommission, updateCommission } from "../../services/commissionService"
 
 export const Dashboard = ({ currentArtist }) => {
   const [commissions, setCommissions] = useState([])
@@ -19,8 +14,8 @@ export const Dashboard = ({ currentArtist }) => {
 
   useEffect(() => {
     fetchCommissions()
-  }, [])
-
+  }, [currentArtist])
+  
   const handleDelete = (commissionId) => {
     deleteCommission(commissionId).then(() => {
       fetchCommissions()
@@ -32,9 +27,8 @@ export const Dashboard = ({ currentArtist }) => {
       ...commission,
       isActive: !commission.isActive,
     }
-    updateCommission(updatedCommission).then(() => {
-      fetchCommissions()
-    })
+
+    updateCommission(updatedCommission).then(fetchCommissions)
   }
 
   const handleToggleClosed = (commission) => {
@@ -42,28 +36,15 @@ export const Dashboard = ({ currentArtist }) => {
       ...commission,
       isClosed: !commission.isClosed,
     }
-    updateCommission(updatedCommission).then(() => {
-      fetchCommissions()
-    })
-  }
 
-  const handleProposalUpdate = (proposal, newStatus) => {
-    const updatedProposal = {
-      ...proposal,
-      status: newStatus,
-    }
-    updateProposal(updatedProposal).then(() => {
-      fetchCommissions()
-    })
+    updateCommission(updatedCommission).then(fetchCommissions)
   }
 
   return (
     <div className="dashboard">
       <h2>My Commissions</h2>
-      <button
-        className="btn-info"
-        onClick={() => navigate("/dashboard/upload")}
-      >
+
+      <button className="btn-info" onClick={() => navigate("/dashboard/add")}>
         + New Commission
       </button>
 
@@ -73,7 +54,8 @@ export const Dashboard = ({ currentArtist }) => {
             <div className="commission-info">
               <span className="commission-title">{commission.title}</span>
               <span className="commission-price">${commission.price}</span>
-              <span className="commission-slots">{commission.slots} slots</span>
+
+            
               <span className="commission-status">
                 {commission.isActive ? "Active" : "Inactive"} |{" "}
                 {commission.isClosed ? "Closed" : "Open"}
@@ -111,42 +93,6 @@ export const Dashboard = ({ currentArtist }) => {
                 {commission.isClosed ? "Reopen" : "Close"}
               </button>
             </div>
-
-            {commission.proposals?.length > 0 ? (
-              <div className="proposals">
-                <h4>Proposals</h4>
-                {commission.proposals.map((proposal) => {
-                  return (
-                    <div key={proposal.id} className="proposal-card">
-                      <span>{proposal.name}</span>
-                      <span>{proposal.status}</span>
-                      <span>{proposal.date}</span>
-                      <span>{proposal.priceRange}</span>
-                      <div className="proposal-actions">
-                        <button
-                          className="btn-info"
-                          onClick={() =>
-                            handleProposalUpdate(proposal, "accepted")
-                          }
-                        >
-                          Accept
-                        </button>
-                        <button
-                          className="btn-warning"
-                          onClick={() =>
-                            handleProposalUpdate(proposal, "declined")
-                          }
-                        >
-                          Decline
-                        </button>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            ) : (
-              <p className="no-proposals">No proposals yet</p>
-            )}
           </div>
         )
       })}

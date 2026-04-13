@@ -3,9 +3,8 @@ import { useEffect, useState } from "react"
 import { Outlet, Route, Routes } from "react-router-dom"
 import { NavBar } from "../components/nav/NavBar"
 import { Portfolio } from "../components/portfolio/Portfolio"
-import { CommissionDetail } from "../components/commission/CommissionDetail"
 import { Dashboard } from "../components/dashboard/Dashboard"
-import { Upload } from "../components/dashboard/Upload"
+import { AddCommission } from "../components/dashboard/AddCommission"
 import { EditCommission } from "../components/dashboard/EditCommission"
 import { EditProfile } from "../components/dashboard/EditProfile"
 
@@ -22,12 +21,6 @@ export const ApplicationViews = () => {
 
   return (
     <Routes>
-      <Route path="portfolio/:username" element={<Portfolio />} />
-
-      <Route
-        path="/portfolio/:username/commission/:id"
-        element={<CommissionDetail />}
-      />
       <Route
         path="/"
         element={
@@ -45,15 +38,23 @@ export const ApplicationViews = () => {
         />
 
         <Route
-          path="dashboard/upload"
-          element={<Upload currentArtist={currentArtist} />}
+          path="dashboard/add"
+          element={<AddCommission currentArtist={currentArtist} />}
         />
 
         <Route
-          path="dashboard/profile/edit"
-          element={<EditProfile currentArtist={currentArtist} />}
+          path="dashboard/commission/:id/edit"
+          element={<EditCommission currentArtist={currentArtist} />}
         />
       </Route>
+
+      <Route
+        path="dashboard/profile/edit"
+        element={<EditProfile currentArtist={currentArtist} />}
+      />
+
+      <Route path="portfolio/:username" element={<Portfolio />} />
+
     </Routes>
   )
 }
