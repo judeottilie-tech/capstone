@@ -2,6 +2,8 @@ export const getCommissionTags = () => {
   return fetch(`http://localhost:8088/commissionTags`).then((res) => res.json())
 }
 
+/*
+stretch goal for tags
 export const createCommissionTag = (commissionTag) => {
   return fetch(`http://localhost:8088/commissionTags`, {
     method: "POST",
@@ -17,3 +19,4 @@ export const deleteCommissionTag = (tagId) => {
     method: "DELETE",
   })
 }
+*/

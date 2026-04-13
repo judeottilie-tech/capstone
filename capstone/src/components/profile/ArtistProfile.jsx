@@ -57,14 +57,11 @@ export const ArtistProfile = ({ currentArtist }) => {
 
             <h3>Commissions</h3>
             <div className="gallery">
-                {commissions
-                    .filter((c) => c.isActive)
-                    .map((commission) => {
-                        const isClosed = commission.isClosed || commission.slots === 0
+        
                         return (
                             <div
                                 key={commission.id}
-                                className={`gallery-card ${isClosed ? "gallery-card-closed" : ""}`}
+                                className={`gallery-card`}
                             >
                                 <img
                                     src={commission.imageUrl}
@@ -74,21 +71,10 @@ export const ArtistProfile = ({ currentArtist }) => {
                                 <div className="gallery-info">
                                     <p className="gallery-title">{commission.title}</p>
                                     <p className="gallery-price">${commission.price}</p>
-                                    <p className="gallery-slots">
-                                        {isClosed ? "CLOSED" : `${commission.slots} slots open`}
-                                    </p>
-                                    {!isClosed && (
-                                        <button
-                                            className="btn-info"
-                                            onClick={() => navigate(`/portfolio/${username}/commission/${commission.id}`)}
-                                        >
-                                            View
-                                        </button>
-                                    )}
+                                    
                                 </div>
                             </div>
                         )
-                    })}
             </div>
       </div>
     )

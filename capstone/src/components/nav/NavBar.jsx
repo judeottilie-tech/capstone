@@ -9,7 +9,7 @@ export const NavBar = ({ currentArtist }) => {
         <NavLink to="/dashboard">Dashboard</NavLink>
       </li>
       <li className="navbar-item">
-        <NavLink to="/dashboard/upload">Upload</NavLink>
+        <NavLink to="/dashboard/add">Add Commission</NavLink>
       </li>
       <li className="navbar-item">
         <NavLink to={`/portfolio/${currentArtist?.username}`}>

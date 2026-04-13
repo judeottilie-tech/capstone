@@ -1,3 +1,4 @@
+/*
 export const getProposalsByCommission = (commissionId) => {
   return fetch(
     `http://localhost:8088/proposals?commissionTypeId=${commissionId}`,
@@ -23,3 +24,4 @@ export const updateProposal = (proposal) => {
     body: JSON.stringify(proposal),
   }).then((res) => res.json())
 }
+  */
