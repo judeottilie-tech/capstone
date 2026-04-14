@@ -56,9 +56,9 @@ export const EditCommission = ({ currentArtist }) => {
         )
 
         Promise.all(
-          existingLinks
-            .filter((commissionTag) => commissionTag.id)
-            .map((commissionTag) => deleteCommissionTag(commissionTag.id)),
+          existingLinks.map((commissionTag) =>
+            deleteCommissionTag(commissionTag.id),
+          ),
         ).then(() => {
           const uniqueTagIds = [...new Set(selectedTagIds)]
 
@@ -78,97 +78,125 @@ export const EditCommission = ({ currentArtist }) => {
   }
 
   return (
-    <form>
-      <h2>Edit Commission</h2>
+    <div className="min-h-screen bg-neutral-soft p-6 flex justify-center">
+      <div className="w-full max-w-md bg-white border border-neutral-border rounded-3xl p-6">
+        <form onSubmit={handleSave} className="flex flex-col gap-4">
+          <h2 className="text-2xl font-bold text-blue-dark">Edit Commission</h2>
 
-      <fieldset>
-        <div className="form-group">
-          <label>Title</label>
-          <input
-            type="text"
-            className="form-control"
-            value={commission.title || ""}
-            onChange={(event) => {
-              setCommission({
-                ...commission,
-                title: event.target.value,
-              })
-            }}
-          />
-        </div>
-      </fieldset>
+          {/* TITLE */}
+          <div>
+            <label className="text-sm font-semibold text-blue-mid">Title</label>
+            <input
+              type="text"
+              value={commission.title || ""}
+              onChange={(event) =>
+                setCommission({
+                  ...commission,
+                  title: event.target.value,
+                })
+              }
+              className="w-full border border-neutral-border rounded-pill px-4 py-2 mt-1 outline-none placeholder:text-blue-mid text-blue-dark focus:border-pink-main"
+            />
+          </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label>Price ($)</label>
-          <input
-            type="number"
-            className="form-control"
-            value={commission.price || ""}
-            onChange={(event) => {
-              setCommission({
-                ...commission,
-                price: event.target.value,
-              })
-            }}
-          />
-        </div>
-      </fieldset>
+          {/* PRICE */}
+          <div>
+            <label className="text-sm font-semibold text-blue-mid">
+              Price ($)
+            </label>
+            <input
+              type="number"
+              value={commission.price || ""}
+              onChange={(event) =>
+                setCommission({
+                  ...commission,
+                  price: event.target.value,
+                })
+              }
+              className="w-full border border-neutral-border rounded-pill px-4 py-2 mt-1 outline-none placeholder:text-blue-mid text-blue-dark focus:border-pink-main"
+            />
+          </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label>Image URL</label>
-          <input
-            type="text"
-            className="form-control"
-            value={commission.imageUrl || ""}
-            onChange={(event) => {
-              setCommission({
-                ...commission,
-                imageUrl: event.target.value,
-              })
-            }}
-          />
-        </div>
-      </fieldset>
+          {/* IMAGE URL */}
+          <div>
+            <label className="text-sm font-semibold text-blue-mid">
+              Image URL
+            </label>
+            <input
+              type="text"
+              value={commission.imageUrl || ""}
+              onChange={(event) =>
+                setCommission({
+                  ...commission,
+                  imageUrl: event.target.value,
+                })
+              }
+              className="w-full border border-neutral-border rounded-pill px-4 py-2 mt-1 outline-none placeholder:text-blue-mid text-blue-dark focus:border-pink-main"
+            />
+            {commission.imageUrl && (
+              <img
+                src={commission.imageUrl}
+                alt="Preview"
+                className="mt-2 rounded-xl max-h-48 object-cover"
+              />
+            )}
+          </div>
 
-      <fieldset>
-        <div className="form-group">
-          <label>Commission Types</label>
+          {/* TAGS */}
+          <div>
+            <label className="text-sm font-semibold text-blue-mid">Tags</label>
 
-          {tags.map((tag) => {
-            return (
-              <div key={tag.id}>
-                <input
-                  type="checkbox"
-                  value={tag.id}
-                  checked={selectedTagIds.includes(tag.id)}
-                  onChange={(event) => {
-                    const tagId = parseInt(event.target.value)
+            <div className="flex flex-wrap gap-2 mt-2">
+              {tags.map((tag) => {
+                return (
+                  <label
+                    key={tag.id}
+                    className={`px-3 py-1 rounded-pill text-sm cursor-pointer border transition ${
+                      selectedTagIds.includes(tag.id)
+                        ? "bg-blue-main text-white border-blue-main"
+                        : "bg-white text-blue-mid border-neutral-border hover:bg-blue-light"
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      value={tag.id}
+                      checked={selectedTagIds.includes(tag.id)}
+                      onChange={(event) => {
+                        const tagId = parseInt(event.target.value)
 
-                    if (event.target.checked) {
-                      setSelectedTagIds((prev) => [...prev, tagId])
-                    } else {
-                      setSelectedTagIds((prev) =>
-                        prev.filter((id) => id !== tagId),
-                      )
-                    }
-                  }}
-                />
-                <label>{tag.name}</label>
-              </div>
-            )
-          })}
-        </div>
-      </fieldset>
+                        if (event.target.checked) {
+                          setSelectedTagIds((previousTagIds) => {
+                            if (previousTagIds.includes(tagId))
+                              return previousTagIds
+                            return [...previousTagIds, tagId]
+                          })
+                        } else {
+                          setSelectedTagIds((previousTagIds) =>
+                            previousTagIds.filter(
+                              (existingTagId) => existingTagId !== tagId,
+                            ),
+                          )
+                        }
+                      }}
+                      className="hidden"
+                    />
 
-      <fieldset>
-        <div className="form-group">
-          <button className="form-btn btn-info" onClick={handleSave}>
+                    {tag.name}
+                  </label>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* BUTTON */}
+          <button
+            type="submit"
+            className="bg-pink-main text-white rounded-pill px-4 py-2 hover:bg-pink-mid transition mt-2"
+          >
             Save Changes
           </button>
-        </div>
-      </fieldset>
-    </form>
+        </form>
+      </div>
+    </div>
   )
 }

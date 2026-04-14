@@ -28,3 +28,16 @@
     font-weight: bold;
     color: white;
   }
+
+  .tag-container {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .tag {
+    background-color: #eee;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+  }

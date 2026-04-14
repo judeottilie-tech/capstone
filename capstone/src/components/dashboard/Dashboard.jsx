@@ -41,61 +41,70 @@ export const Dashboard = ({ currentArtist }) => {
   }
 
   return (
-    <div className="dashboard">
-      <h2>My Commissions</h2>
+    <div className="min-h-screen bg-neutral-soft p-6">
+      <div className="max-w-3xl mx-auto">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold text-pink-dark">
+            my commission types
+          </h2>
 
-      <button className="btn-info" onClick={() => navigate("/dashboard/add")}>
-        + New Commission
-      </button>
+          <button
+            onClick={() => navigate("/dashboard/add")}
+            className="bg-pink-main border-neutral-border rounded-pill px-4 text-white py-1 rounded-pill hover:bg-pink-mid transition"
+          >
+            + new
+          </button>
+        </div>
 
-      {commissions.map((commission) => {
-        return (
-          <div key={commission.id} className="commission-card">
-            <div className="commission-info">
-              <span className="commission-title">{commission.title}</span>
-              <span className="commission-price">${commission.price}</span>
-
-            
-              <span className="commission-status">
-                {commission.isActive ? "Active" : "Inactive"} |{" "}
-                {commission.isClosed ? "Closed" : "Open"}
-              </span>
-            </div>
-
-            <div className="commission-actions">
-              <button
-                className="btn-secondary"
-                onClick={() =>
-                  navigate(`/dashboard/commission/${commission.id}/edit`)
-                }
+        <div className="flex flex-col gap-4">
+          {commissions.map((commission) => {
+            return (
+              <div
+                key={commission.id}
+                className="bg-white border border-neutral-border rounded-xl p-4 flex justify-between items-center"
               >
-                Edit
-              </button>
+                <div>
+                  <p className="text-blue-dark font-medium">
+                    {commission.title}
+                  </p>
 
-              <button
-                className="btn-warning"
-                onClick={() => handleDelete(commission.id)}
-              >
-                Delete
-              </button>
+                  <p className="text-sm text-blue-mid">${commission.price}</p>
+                </div>
 
-              <button
-                className="btn-info"
-                onClick={() => handleToggleActive(commission)}
-              >
-                {commission.isActive ? "Set Inactive" : "Set Active"}
-              </button>
+                <div className="flex gap-2 flex-wrap justify-end">
+                  <button
+                    onClick={() =>
+                      navigate(`/dashboard/commission/${commission.id}/edit`)
+                    }
+                    className="text-xs bg-blue-light text-blue-dark px-3 py-1 rounded-pill hover:bg-blue-mid"
+                  >
+                    edit
+                  </button>
 
-              <button
-                className="btn-info"
-                onClick={() => handleToggleClosed(commission)}
-              >
-                {commission.isClosed ? "Reopen" : "Close"}
-              </button>
-            </div>
-          </div>
-        )
-      })}
+                  <button
+                    onClick={() => handleDelete(commission.id)}
+                    className="text-xs bg-pink-light text-pink-dark px-3 py-1 rounded-pill hover:bg-pink-mid"
+                  >
+                    delete
+                  </button>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 }
+
+
+/*add later-
+
+
+
+<button
+onClick={() => handleToggleActive(commission)}
+className="text-xs bg-yellow-light text-yellow-dark px-3 py-1 rounded-pill hover:bg-yellow-mid"
+>
+{commission.isActive ? "set inactive" : "set active"}
+</button>*/

@@ -35,9 +35,13 @@ export const Register = () => {
   }
 
   return (
-    <div className="register-container">
-      <h2>Register</h2>
+    <div className="min-h-screen w-full flex items-center justify-center bg-neutral-soft">
+  <div className="flex flex-col gap-4 w-80">
+    <h2 className="text-4xl font-bold tracking-tight text-pink-main">
+      Register
+    </h2>
       <input
+        className="border border-neutral-border rounded-pill px-4 py-2 placeholder:text-blue-mid text-blue-dark flex-1 min-w-0 outline-none focus:border-pink-main bg-white"
         type="text"
         placeholder="Full name"
         onChange={(event) =>
@@ -45,6 +49,7 @@ export const Register = () => {
         }
       />
       <input
+        className="border border-neutral-border rounded-pill px-4 py-2 placeholder:text-blue-mid text-blue-dark flex-1 min-w-0 outline-none focus:border-pink-main bg-white"
         type="text"
         placeholder="Username"
         onChange={(event) =>
@@ -52,6 +57,7 @@ export const Register = () => {
         }
       />
       <input
+        className="border border-neutral-border rounded-pill px-4 py-2 placeholder:text-blue-mid text-blue-dark flex-1 min-w-0 outline-none focus:border-pink-main bg-white"
         type="email"
         placeholder="Email"
         onChange={(event) =>
@@ -59,11 +65,23 @@ export const Register = () => {
         }
       />
 
-      <button onClick={registerNewArtist}>Register</button>
+      <button
+        className="bg-pink-main text-white rounded-pill px-4 py-2 text-sm hover:bg-pink-mid whitespace-nowrap transition-colors"
+        onClick={registerNewArtist}
+      >
+        Register
+      </button>
 
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
+      <p className="text-sm text-pink-mid hover:text-blue-main transition-colors">
+        Already have an account?{" "}
+        <Link
+          className="text-sm text-pink-mid hover:text-blue-main transition-colors"
+          to="/login"
+        >
+          Login
+        </Link>
       </p>
+    </div>
     </div>
   )
 }

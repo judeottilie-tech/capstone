@@ -46,15 +46,12 @@ export const ApplicationViews = () => {
           path="dashboard/commission/:id/edit"
           element={<EditCommission currentArtist={currentArtist} />}
         />
+
+        <Route
+          path="dashboard/profile/edit"
+          element={<EditProfile currentArtist={currentArtist} />}
+        />
       </Route>
-
-      <Route
-        path="dashboard/profile/edit"
-        element={<EditProfile currentArtist={currentArtist} />}
-      />
-
-      <Route path="portfolio/:username" element={<Portfolio />} />
-
     </Routes>
   )
 }

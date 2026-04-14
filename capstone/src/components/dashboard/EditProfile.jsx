@@ -10,12 +10,15 @@ export const EditProfile = ({ currentArtist }) => {
     email: "",
     bio: "",
     profileLink: "",
+    profileImageUrl: "",
   })
 
   useEffect(() => {
-    setArtist(currentArtist)
-  }, [currentArtist])
-
+    getArtistById(currentArtist.id).then((artistData) => {
+      setArtist(artistData)
+    })
+  }, [])
+  
   const handleSave = (event) => {
     event.preventDefault()
 
@@ -30,65 +33,75 @@ export const EditProfile = ({ currentArtist }) => {
   }
 
   return (
-    <form>
-      <h2>Edit Profile</h2>
+    <div className="min-h-screen bg-neutral-soft p-6 ">
+      <div className="max-w-3xl mx-auto bg-white p-6 rounded-2xl border border-neutral-border">
+        <h2 className="text-2xl font-bold text-blue-dark mb-6">edit profile</h2>
 
-      <fieldset>
-        <div className="form-group">
-          <label>Full Name</label>
+        <form className="flex flex-col gap-4">
+          <label className="text-1xl font-bold text-blue-mid">
+            profile icon
+          </label>
           <input
             type="text"
-            className="form-control"
-            value={artist.fullName || ""}
-            onChange={(event) => setArtist({ ...artist, fullName: event.target.value })}
+            value={artist.profileImageUrl || ""}
+            onChange={(event) =>
+              setArtist({ ...artist, profileImageUrl: event.target.value })
+            }
+            placeholder="image url"
+            className="border border-neutral-border rounded-pill px-4 py-2 outline-none placeholder:text-blue-mid text-blue-dark  focus:border-pink-mid"
           />
-        </div>
-      </fieldset>
+          
 
-      <fieldset>
-        <div className="form-group">
-          <label>Email</label>
+          <label className="text-1xl font-bold text-blue-mid">edit name </label>
+          <input
+            type="text"
+            value={artist.fullName || ""}
+            onChange={(event) =>
+              setArtist({ ...artist, fullName: event.target.value })
+            }
+            placeholder="Full Name"
+            className="border border-neutral-border rounded-pill px-4 py-2 outline-none placeholder:text-blue-mid text-blue-dark  focus:border-pink-mid"
+          />
+          <label className="text-1xl font-bold text-blue-mid">
+            edit email{" "}
+          </label>
           <input
             type="email"
-            className="form-control"
             value={artist.email || ""}
-            onChange={(event) => setArtist({ ...artist, email: event.target.value })}
+            onChange={(event) =>
+              setArtist({ ...artist, email: event.target.value })
+            }
+            placeholder="Email"
+            className="border border-neutral-border rounded-pill px-4 py-2 outline-none placeholder:text-blue-mid text-blue-dark focus:border-pink-mid"
           />
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <div className="form-group">
-          <label>Bio</label>
+          <label className="text-1xl font-bold text-blue-mid">edit bio </label>
           <textarea
-            className="form-control"
             value={artist.bio || ""}
-            onChange={(event) => setArtist({ ...artist, bio: event.target.value })}
+            onChange={(event) =>
+              setArtist({ ...artist, bio: event.target.value })
+            }
+            placeholder="Bio"
+            className="border border-neutral-border rounded-pill px-4 py-2 outline-none placeholder:text-blue-mid text-blue-dark  focus:border-pink-mid"
           />
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <div className="form-group">
-          <label>Profile Link</label>
+          <label className="text-1xl font-bold text-blue-mid">edit link </label>
           <input
             type="text"
-            className="form-control"
             value={artist.profileLink || ""}
             onChange={(event) =>
               setArtist({ ...artist, profileLink: event.target.value })
             }
+            placeholder="Profile Link"
+            className="border border-neutral-border rounded-pill px-4 py-2 outline-none placeholder:text-blue-mid text-blue-dark  focus:border-pink-mid"
           />
-        </div>
-      </fieldset>
 
-      <fieldset>
-        <div className="form-group">
-          <button className="form-btn btn-info" onClick={handleSave}>
+          <button
+            onClick={handleSave}
+            className="bg-blue-main border-neutral-border rounded-pill px-4 text-white py-2 rounded-pill hover:bg-blue-mid transition"
+          >
             Save Changes
           </button>
-        </div>
-      </fieldset>
-    </form>
+        </form>
+      </div>
+    </div>
   )
 }
