@@ -33,10 +33,13 @@ export const AddCommission = ({ currentArtist }) => {
         artistId: currentArtist.id,
       }
 
-      createCommissionTag({
-        commissionId: createdCommission.id, 
-        tagId: tagId,
-      })
+      createCommission(newCommission).then((createdCommission) => {
+        const tagPromises = selectedTagIds.map((tagId) => {
+          return createCommissionTag({
+            commissionId: createdCommission.id,
+            tagId: tagId,
+          })
+        })
 
         Promise.all(tagPromises).then(() => {
           navigate("/dashboard")
@@ -44,7 +47,6 @@ export const AddCommission = ({ currentArtist }) => {
       })
     }
   }
-                
 
   return (
     <form>
@@ -90,7 +92,30 @@ export const AddCommission = ({ currentArtist }) => {
           />
         </div>
       </fieldset>
+      <fieldset>
+        {tags.map((tag) => {
+          return (
+            <div key={tag.id}>
+              <input
+                type="checkbox"
+                value={tag.id}
+                onChange={(event) => {
+                  const tagId = parseInt(event.target.value)
 
+                  if (event.target.checked) {
+                    setSelectedTagIds([...selectedTagIds, tagId])
+                  } else {
+                    setSelectedTagIds(
+                      selectedTagIds.filter((id) => id !== tagId),
+                    )
+                  }
+                }}
+              />
+              <label>{tag.name}</label>
+            </div>
+          )
+        })}
+      </fieldset>
       <fieldset>
         <div className="form-group">
           <button className="form-btn btn-info" onClick={handleSave}>
@@ -98,27 +123,6 @@ export const AddCommission = ({ currentArtist }) => {
           </button>
         </div>
       </fieldset>
-
-      {tags.map((tag) => {
-        return (
-          <div key={tag.id}>
-            <input
-              type="checkbox"
-              value={tag.id}
-              onChange={(event) => {
-                const tagId = parseInt(event.target.value)
-
-                if (event.target.checked) {
-                  setSelectedTagIds([...selectedTagIds, tagId])
-                } else {
-                  setSelectedTagIds(selectedTagIds.filter((id) => id !== tagId))
-                }
-              }}
-            />
-            <label>{tag.name}</label>
-          </div>
-        )
-      })}
     </form>
   )
 }

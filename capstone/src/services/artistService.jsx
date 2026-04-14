@@ -2,6 +2,13 @@ export const getArtists = () => {
   return fetch("http://localhost:8088/artists").then((res) => res.json())
 }
 
+export const getArtistById = (id) => {
+  return fetch(
+    `http://localhost:8088/artists/${id}`,
+  ).then((res) => res.json())
+}
+
+
 export const getArtistByUsername = (username) => {
   return fetch(`http://localhost:8088/artists?username=${username}`).then(
     (res) => res.json(),

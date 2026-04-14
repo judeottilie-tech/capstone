@@ -54,15 +54,6 @@
       "title": "Tattoo Design",
       "price": 120,
       "imageUrl": "https://via.placeholder.com/400x400.png?text=Tattoo+Design"
-    },
-    {
-      "title": "Pet",
-      "price": 65,
-      "imageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-41_orig.png",
-      "artistId": 1,
-      "id": 5,
-      "commissionTags": [],
-      "isActive": true
     }
   ],
   "tags": [

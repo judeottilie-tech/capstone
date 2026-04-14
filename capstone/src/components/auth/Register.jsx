@@ -29,7 +29,7 @@ export const Register = () => {
           }),
         )
 
-        navigate("/")
+        navigate("/dashboard")
       }
     })
   }
@@ -40,20 +40,27 @@ export const Register = () => {
       <input
         type="text"
         placeholder="Full name"
-        onChange={(e) => setArtist({ ...artist, fullName: e.target.value })}
+        onChange={(event) =>
+          setArtist({ ...artist, fullName: event.target.value })
+        }
       />
       <input
         type="text"
         placeholder="Username"
-        onChange={(e) => setArtist({ ...artist, username: e.target.value })}
+        onChange={(event) =>
+          setArtist({ ...artist, username: event.target.value })
+        }
       />
       <input
         type="email"
         placeholder="Email"
-        onChange={(e) => setArtist({ ...artist, email: e.target.value })}
+        onChange={(event) =>
+          setArtist({ ...artist, email: event.target.value })
+        }
       />
 
       <button onClick={registerNewArtist}>Register</button>
+
       <p>
         Already have an account? <Link to="/login">Login</Link>
       </p>

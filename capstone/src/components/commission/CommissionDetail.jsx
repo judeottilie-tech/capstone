@@ -9,7 +9,7 @@ export const CommissionDetail = () => {
   const navigate = useNavigate()
   const [commission, setCommission] = useState({})
 
-  useEffect = (() => {
+  useEffect(() => {
     getCommissionById(id).then((commissionData) => {
       setCommission(commissionData)
     })

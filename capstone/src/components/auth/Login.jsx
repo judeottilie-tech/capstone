@@ -12,8 +12,8 @@ export const Login = () => {
   const [email, setEmail] = useState("")
   const navigate = useNavigate()
 
-  const handleLogin = (e) => {
-    e.preventDefault()
+  const handleLogin = (event) => {
+    event.preventDefault()
 
     getArtistByEmail(email).then((foundArtists) => {
       if (foundArtists.length === 1) {
@@ -25,7 +25,7 @@ export const Login = () => {
             username: artist.username,
           }),
         )
-        navigate("/")
+        navigate("/dashboard")
       } else {
         window.alert("Invalid login")
       }
@@ -41,7 +41,7 @@ export const Login = () => {
           <input
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(event) => setEmail(event.target.value)}
             placeholder="Email address"
             required
             autoFocus
@@ -51,6 +51,8 @@ export const Login = () => {
             Sign in
           </button>
         </form>
+
+        
         <Link to="/register">Not a member yet?</Link>
       </div>
     </div>
