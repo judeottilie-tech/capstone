@@ -107,7 +107,7 @@ export const Portfolio = ({ currentArtist }) => {
           </select>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-6">
           {filteredCommissions.length > 0 ? (
             filteredCommissions.map((commissionObj) => {
               return (

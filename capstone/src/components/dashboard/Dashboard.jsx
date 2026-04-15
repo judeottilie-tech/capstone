@@ -18,7 +18,9 @@ export const Dashboard = ({ currentArtist }) => {
   
   const handleDelete = (commissionId) => {
     deleteCommission(commissionId).then(() => {
-      fetchCommissions()
+      getCommissionsByArtist(currentArtist.id).then((commissionsArray) => {
+        setCommissions(commissionsArray)
+      })
     })
   }
 

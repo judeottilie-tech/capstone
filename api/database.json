@@ -41,6 +41,24 @@
       "profileLink": "instagram.com",
       "id": 5,
       "profileImageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-19_orig.png"
+    },
+    {
+      "fullName": "Milam",
+      "username": "pieliker49",
+      "email": "pieliker@pie.com",
+      "bio": "im a big boy!",
+      "profileLink": "instagram.com",
+      "id": 6,
+      "profileImageUrl": "https://u.cubeupload.com/pinkcupid/980FE25336C8479B8284.jpg"
+    },
+    {
+      "fullName": "jude",
+      "username": "jude",
+      "email": "jude@jude.com",
+      "bio": "hehehehehe",
+      "profileLink": "instagram.com",
+      "id": 7,
+      "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
     }
   ],
   "commissions": [
@@ -112,66 +130,75 @@
       "id": 6
     },
     {
-      "title": "Complex Pet Illustration",
-      "price": 250,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/IMG5658.jpeg",
-      "artistId": 1,
-      "id": 7
-    },
-    {
-      "title": "Character Portrait",
-      "price": 50,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/IMG1623.jpeg",
-      "artistId": 1,
-      "id": 8
-    },
-    {
-      "title": "Icon",
-      "price": 50,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/UntitledArtwork1.jpeg",
-      "artistId": 1,
-      "id": 9,
+      "title": "Pet Portrait",
+      "price": 100000,
+      "imageUrl": "https://u.cubeupload.com/pinkcupid/petportrait.png",
+      "artistId": 6,
+      "id": 10,
       "commissionTags": [
         {
-          "commissionId": 9,
+          "commissionId": 10,
           "tagId": 1,
-          "id": 23
-        },
-        {
-          "commissionId": 9,
-          "tagId": 7,
-          "id": 24
-        },
-        {
-          "commissionId": 9,
-          "tagId": 9,
-          "id": 25
-        },
-        {
-          "commissionId": 9,
-          "tagId": 14,
-          "id": 26
-        },
-        {
-          "commissionId": 9,
-          "tagId": 14,
-          "id": 27
-        },
-        {
-          "commissionId": 9,
-          "tagId": 19,
           "id": 28
+        },
+        {
+          "commissionId": 10,
+          "tagId": 11,
+          "id": 29
+        },
+        {
+          "commissionId": 10,
+          "tagId": 12,
+          "id": 30
+        },
+        {
+          "commissionId": 10,
+          "tagId": 7,
+          "id": 31
+        },
+        {
+          "commissionId": 10,
+          "tagId": 4,
+          "id": 32
         }
       ],
       "proposals": [],
       "artist": {
-        "id": 1,
-        "fullName": "Jude!",
-        "email": "jude@art.com",
-        "username": "judeottilie",
-        "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
-        "profileLink": "https://instagram.com/judeottilie",
-        "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
+        "fullName": "Milam",
+        "username": "pieliker49",
+        "email": "pieliker@pie.com",
+        "bio": "im a big boy!",
+        "profileLink": "instagram.com",
+        "id": 6,
+        "profileImageUrl": "https://u.cubeupload.com/pinkcupid/980FE25336C8479B8284.jpg"
+      }
+    },
+    {
+      "title": "Sticker",
+      "price": 50,
+      "imageUrl": "https://u.cubeupload.com/pinkcupid/cardstoretrue1.png",
+      "artistId": 7,
+      "id": 11,
+      "commissionTags": [
+        {
+          "commissionId": 11,
+          "tagId": 1,
+          "id": 32
+        },
+        {
+          "commissionId": 11,
+          "tagId": 7,
+          "id": 33
+        }
+      ],
+      "proposals": [],
+      "artist": {
+        "fullName": "jude",
+        "username": "jude",
+        "email": "jude@jude.com",
+        "bio": "",
+        "profileLink": "",
+        "id": 7
       }
     }
   ],
@@ -242,74 +269,39 @@
       "id": 13
     },
     {
-      "commissionId": 7,
-      "tagId": 2,
-      "id": 14
+      "commissionId": 10,
+      "tagId": 1,
+      "id": 28
     },
     {
-      "commissionId": 7,
+      "commissionId": 10,
       "tagId": 11,
-      "id": 15
+      "id": 29
     },
     {
-      "commissionId": 7,
-      "tagId": 7,
-      "id": 16
-    },
-    {
-      "commissionId": 7,
-      "tagId": 3,
-      "id": 17
-    },
-    {
-      "commissionId": 8,
-      "tagId": 1,
-      "id": 18
-    },
-    {
-      "commissionId": 8,
-      "tagId": 7,
-      "id": 19
-    },
-    {
-      "commissionId": 8,
+      "commissionId": 10,
       "tagId": 12,
-      "id": 20
+      "id": 30
     },
     {
-      "commissionId": 8,
-      "tagId": 14,
-      "id": 21
-    },
-    {
-      "commissionId": 8,
-      "tagId": 14,
-      "id": 22
-    },
-    {
-      "commissionId": 9,
-      "tagId": 1,
-      "id": 23
-    },
-    {
-      "commissionId": 9,
+      "commissionId": 10,
       "tagId": 7,
-      "id": 24
+      "id": 31
     },
     {
-      "commissionId": 9,
-      "tagId": 9,
-      "id": 25
+      "commissionId": 11,
+      "tagId": 1,
+      "id": 32
     },
     {
-      "commissionId": 9,
-      "tagId": 14,
-      "id": 26
+      "commissionId": 11,
+      "tagId": 7,
+      "id": 33
     },
     {
-      "commissionId": 9,
-      "tagId": 14,
-      "id": 27
+      "commissionId": 11,
+      "tagId": 12,
+      "id": 34
     }
   ],
   "tags": [
