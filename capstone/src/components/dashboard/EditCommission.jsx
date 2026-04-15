@@ -8,7 +8,7 @@ import { getTags } from "../../services/tagService"
 import {
   createCommissionTag,
   deleteCommissionTag,
-  getCommissionTags,
+  getCommissionTagsByCommission,
 } from "../../services/commissionTagService"
 
 export const EditCommission = ({ currentArtist }) => {
@@ -39,42 +39,46 @@ export const EditCommission = ({ currentArtist }) => {
     })
   }, [id])
 
-  const handleSave = (event) => {
+  const handleSave = async (event) => {
     event.preventDefault()
 
     const commissionId = parseInt(id)
 
-    const updatedCommission = {
-      ...commission,
-      price: parseFloat(commission.price),
-    }
-
-    updateCommission(updatedCommission).then(() => {
-      getCommissionTags().then((allCommissionTags) => {
-        const existingLinks = allCommissionTags.filter(
-          (commissionTag) => commissionTag.commissionId === commissionId,
-        )
-
-        Promise.all(
-          existingLinks.map((commissionTag) =>
-            deleteCommissionTag(commissionTag.id),
-          ),
-        ).then(() => {
-          const uniqueTagIds = [...new Set(selectedTagIds)]
-
-          const tagPromises = uniqueTagIds.map((tagId) => {
-            return createCommissionTag({
-              commissionId: commissionId,
-              tagId: tagId,
-            })
-          })
-
-          Promise.all(tagPromises).then(() => {
-            navigate("/dashboard")
-          })
-        })
+    try {
+      await updateCommission({
+        ...commission,
+        price: parseFloat(commission.price),
       })
-    })
+
+      const existingCommissionTags =
+        await getCommissionTagsByCommission(commissionId)
+
+      const existingTagIds = existingCommissionTags.map(
+        (commissionTag) => commissionTag.tagId,
+      )
+
+      const tagsToAdd = selectedTagIds.filter(
+        (tagId) => !existingTagIds.includes(tagId),
+      )
+
+      const tagsToDelete = existingCommissionTags.filter(
+        (commissionTag) => !selectedTagIds.includes(commissionTag.tagId),
+      )
+
+      await Promise.all([
+        ...tagsToDelete.map((commissionTag) =>
+          deleteCommissionTag(commissionTag.id),
+        ),
+        ...tagsToAdd.map((tagId) =>
+          createCommissionTag({ commissionId, tagId }),
+        ),
+      ])
+
+      navigate("/dashboard")
+    } catch (error) {
+      console.error(error)
+      alert("Something went wrong")
+    }
   }
 
   return (

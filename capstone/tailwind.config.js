@@ -8,19 +8,13 @@ export default {
           light: "#fde8f0",
           mid: "#f9a8c9",
           main: "#f472a8",
-          dark: "#b1164f",
+          dark: "#c4547e",
         },
         blue: {
           light: "#dff0fb",
           mid: "#93c9f0",
           main: "#60aee8",
           dark: "#3a7cb8",
-        },
-        yellow: {
-          light: "#fef9db",
-          mid: "#fde98a",
-          main: "#f9d74c",
-          dark: "#eba40a",
         },
         neutral: {
           soft: "#fdf6f9",

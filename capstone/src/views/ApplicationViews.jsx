@@ -7,17 +7,28 @@ import { Dashboard } from "../components/dashboard/Dashboard"
 import { AddCommission } from "../components/dashboard/AddCommission"
 import { EditCommission } from "../components/dashboard/EditCommission"
 import { EditProfile } from "../components/dashboard/EditProfile"
+import { Authorized } from "../views/Authorized"
+import { ScrollToTop } from "../views/ScrollToTop"
 
 export const ApplicationViews = () => {
   const [currentArtist, setCurrentArtist] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const localArtist = localStorage.getItem("portfolio_artist")
-    const artistObject = JSON.parse(localArtist)
-    setCurrentArtist(artistObject)
+
+    if (localArtist) {
+      setCurrentArtist(JSON.parse(localArtist))
+    }
+
+    setIsLoading(false)
   }, [])
 
-  if (!currentArtist) return null
+  if (isLoading) return null
+
+  console.log("currentArtist", currentArtist)
+
+  //if (!currentArtist) return null
 
   return (
     <Routes>
@@ -25,31 +36,51 @@ export const ApplicationViews = () => {
         path="/"
         element={
           <>
-            <NavBar currentArtist={currentArtist} />
+            <ScrollToTop />
+            {currentArtist && <NavBar currentArtist={currentArtist} />}
             <Outlet />
           </>
         }
       >
-        <Route index element={<Dashboard currentArtist={currentArtist} />} />
+        <Route
+          path="portfolio/:username"
+          element={<Portfolio currentArtist={currentArtist} />}
+        />
 
         <Route
           path="dashboard"
-          element={<Dashboard currentArtist={currentArtist} />}
+          element={
+            <Authorized>
+              <Dashboard currentArtist={currentArtist} />
+            </Authorized>
+          }
         />
 
         <Route
           path="dashboard/add"
-          element={<AddCommission currentArtist={currentArtist} />}
+          element={
+            <Authorized>
+              <AddCommission currentArtist={currentArtist} />
+            </Authorized>
+          }
         />
 
         <Route
           path="dashboard/commission/:id/edit"
-          element={<EditCommission currentArtist={currentArtist} />}
+          element={
+            <Authorized>
+              <EditCommission currentArtist={currentArtist} />
+            </Authorized>
+          }
         />
 
         <Route
           path="dashboard/profile/edit"
-          element={<EditProfile currentArtist={currentArtist} />}
+          element={
+            <Authorized>
+              <EditProfile currentArtist={currentArtist} />
+            </Authorized>
+          }
         />
       </Route>
     </Routes>

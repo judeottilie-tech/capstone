@@ -6,6 +6,7 @@ export const NavBar = ({ currentArtist }) => {
     `px-7 py-4 rounded-pill text-sm transition ${
       isActive ? "bg-pink-dark text-white" : "text-pink-mid hover:bg-pink-light"
     }`
+console.log("Navbar rendering")
 
   return (
     <nav className="w-full bg-white border-b border-neutral-border p-4">

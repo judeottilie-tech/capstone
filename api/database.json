@@ -6,7 +6,8 @@
       "email": "jude@art.com",
       "username": "judeottilie",
       "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
-      "profileLink": "https://instagram.com/judeottilie"
+      "profileLink": "https://instagram.com/judeottilie",
+      "profileImageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-35_orig.png"
     },
     {
       "id": 2,
@@ -31,6 +32,15 @@
       "username": "inkforge",
       "bio": "Dark fantasy and tattoo-style illustrations.",
       "profileLink": "https://instagram.com/inkforge"
+    },
+    {
+      "fullName": "Kitty",
+      "username": "kittycat",
+      "email": "cat@cat.com",
+      "bio": "hiii im a cat meow",
+      "profileLink": "instagram.com",
+      "id": 5,
+      "profileImageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-19_orig.png"
     }
   ],
   "commissions": [
@@ -54,6 +64,82 @@
       "title": "Tattoo Design",
       "price": 120,
       "imageUrl": "https://via.placeholder.com/400x400.png?text=Tattoo+Design"
+    },
+    {
+      "title": "Pet Portrait",
+      "price": 65,
+      "imageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-41_orig.png",
+      "artistId": 1,
+      "id": 5,
+      "commissionTags": [
+        {
+          "commissionId": 5,
+          "tagId": 11,
+          "id": 4
+        },
+        {
+          "commissionId": 5,
+          "tagId": 7,
+          "id": 5
+        },
+        {
+          "commissionId": 5,
+          "tagId": 12,
+          "id": 6
+        },
+        {
+          "commissionId": 5,
+          "tagId": 1,
+          "id": 7
+        }
+      ],
+      "proposals": [],
+      "artist": {
+        "id": 1,
+        "fullName": "Jude!",
+        "email": "jude@art.com",
+        "username": "judeottilie",
+        "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
+        "profileLink": "https://instagram.com/judeottilie",
+        "profileImageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-35_orig.png"
+      }
+    }
+  ],
+  "commissionTags": [
+    {
+      "id": 1,
+      "commissionId": 2,
+      "tagId": 2
+    },
+    {
+      "id": 2,
+      "commissionId": 2,
+      "tagId": 16
+    },
+    {
+      "id": 3,
+      "commissionId": 3,
+      "tagId": 1
+    },
+    {
+      "commissionId": 5,
+      "tagId": 11,
+      "id": 4
+    },
+    {
+      "commissionId": 5,
+      "tagId": 7,
+      "id": 5
+    },
+    {
+      "commissionId": 5,
+      "tagId": 12,
+      "id": 6
+    },
+    {
+      "commissionId": 5,
+      "tagId": 1,
+      "id": 7
     }
   ],
   "tags": [
@@ -132,48 +218,6 @@
     {
       "id": 19,
       "name": "tattoo flash"
-    }
-  ],
-  "commissionTags": [
-    {
-      "id": 1,
-      "commissionId": 2,
-      "tagId": 2
-    },
-    {
-      "id": 2,
-      "commissionId": 2,
-      "tagId": 16
-    },
-    {
-      "id": 3,
-      "commissionId": 3,
-      "tagId": 1
-    },
-    {
-      "id": 4,
-      "commissionId": 5,
-      "tagId": 1
-    },
-    {
-      "id": 5,
-      "commissionId": 5,
-      "tagId": 2
-    },
-    {
-      "commissionId": 5,
-      "tagId": 11,
-      "id": 6
-    },
-    {
-      "commissionId": 5,
-      "tagId": 7,
-      "id": 7
-    },
-    {
-      "commissionId": 5,
-      "tagId": 11,
-      "id": 8
     }
   ]
 }

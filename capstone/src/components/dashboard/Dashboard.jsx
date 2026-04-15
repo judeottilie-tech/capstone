@@ -6,15 +6,15 @@ export const Dashboard = ({ currentArtist }) => {
   const [commissions, setCommissions] = useState([])
   const navigate = useNavigate()
 
-  const fetchCommissions = () => {
-    getCommissionsByArtist(currentArtist.id).then((commissionArray) => {
-      setCommissions(commissionArray)
-    })
-  }
+  useEffect(() => {
+    if (!currentArtist?.id) return
+
+    getCommissionsByArtist(currentArtist.id).then(setCommissions)
+  }, [currentArtist])
 
   useEffect(() => {
-    fetchCommissions()
-  }, [currentArtist])
+    window.scrollTo(0, 0)
+  }, [])
   
   const handleDelete = (commissionId) => {
     deleteCommission(commissionId).then(() => {
@@ -22,7 +22,7 @@ export const Dashboard = ({ currentArtist }) => {
     })
   }
 
-  const handleToggleActive = (commission) => {
+ /*const handleToggleActive = (commission) => {
     const updatedCommission = {
       ...commission,
       isActive: !commission.isActive,
@@ -39,6 +39,7 @@ export const Dashboard = ({ currentArtist }) => {
 
     updateCommission(updatedCommission).then(fetchCommissions)
   }
+    */
 
   return (
     <div className="min-h-screen bg-neutral-soft p-6">
