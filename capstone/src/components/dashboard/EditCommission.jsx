@@ -87,7 +87,6 @@ export const EditCommission = ({ currentArtist }) => {
         <form onSubmit={handleSave} className="flex flex-col gap-4">
           <h2 className="text-2xl font-bold text-blue-dark">Edit Commission</h2>
 
-          {/* TITLE */}
           <div>
             <label className="text-sm font-semibold text-blue-mid">Title</label>
             <input
@@ -103,7 +102,6 @@ export const EditCommission = ({ currentArtist }) => {
             />
           </div>
 
-          {/* PRICE */}
           <div>
             <label className="text-sm font-semibold text-blue-mid">
               Price ($)
@@ -121,7 +119,6 @@ export const EditCommission = ({ currentArtist }) => {
             />
           </div>
 
-          {/* IMAGE URL */}
           <div>
             <label className="text-sm font-semibold text-blue-mid">
               Image URL
@@ -146,7 +143,6 @@ export const EditCommission = ({ currentArtist }) => {
             )}
           </div>
 
-          {/* TAGS */}
           <div>
             <label className="text-sm font-semibold text-blue-mid">Tags</label>
 
@@ -192,7 +188,6 @@ export const EditCommission = ({ currentArtist }) => {
             </div>
           </div>
 
-          {/* BUTTON */}
           <button
             type="submit"
             className="bg-pink-main text-white rounded-pill px-4 py-2 hover:bg-pink-mid transition mt-2"

@@ -50,7 +50,7 @@ export const Portfolio = ({ currentArtist }) => {
     <div className="min-h-screen bg-neutral-soft p-6">
       <div className="max-w-5xl mx-auto">
         <div className="bg-white border border-neutral-border rounded-2xl p-6 flex gap-6 items-center mb-6">
-          <div className="w-16 h-16 rounded-full overflow-hidden border border-neutral-border">
+          <div className="w-20 h-20 rounded-full overflow-hidden border border-neutral-border">
             {artist.profileImageUrl ? (
               <img
                 src={artist.profileImageUrl}
