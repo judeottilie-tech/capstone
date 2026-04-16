@@ -27,12 +27,14 @@ export const NavBar = ({ currentArtist }) => {
 
   return (
     <>
-      {/* ── TOP BAR (visible on all sizes) ── */}
       <nav className="w-full bg-white border-b border-neutral-border px-4 py-3 flex items-center justify-between">
-        {/*logo*/}
-        <span className="text-pink-main font-bold text-lg tracking-tight">
+        {/*logo, will need to swap the text for an img tag once i make the logo*/}
+        <NavLink
+          to="/dashboard"
+          className="text-pink-main font-bold text-lg tracking-tight hover:opacity-75 transition"
+        >
           portfol.io
-        </span>
+        </NavLink>
 
         {/*desktop links hidden on mobile*/}
         <ul className="hidden md:flex gap-3 items-center">

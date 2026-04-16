@@ -66,13 +66,23 @@ export const Dashboard = ({ currentArtist }) => {
                 key={commission.id}
                 className="bg-white border border-neutral-border rounded-xl p-4 flex justify-between items-center"
               >
-                <div>
-                  <p className="text-blue-dark font-medium">
-                    {commission.title}
-                  </p>
-
-                  <p className="text-sm text-blue-mid">${commission.price}</p>
+                <div className="flex items-center gap-3">
+                  
+                  {commission.imageUrl && (
+                    <img
+                      src={commission.imageUrl}
+                      alt={commission.title}
+                      className="w-12 h-12 rounded-lg object-cover border border-neutral-border flex-shrink-0"
+                    />
+                  )}
+                  <div>
+                    <p className="text-blue-dark font-medium">
+                      {commission.title}
+                    </p>
+                    <p className="text-sm text-blue-mid">${commission.price}</p>
+                  </div>
                 </div>
+                
 
                 <div className="flex gap-2 flex-wrap justify-end">
                   <button
