@@ -54,7 +54,7 @@ export const Login = () => {
               type="submit"
               className="bg-pink-main text-white rounded-pill px-4 py-2 text-sm hover:bg-pink-mid whitespace-nowrap transition-colors"
             >
-              Sign in
+              Sign in!
             </button>
           </div>
         </form>

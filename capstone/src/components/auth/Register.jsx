@@ -69,7 +69,7 @@ export const Register = () => {
         className="bg-pink-main text-white rounded-pill px-4 py-2 text-sm hover:bg-pink-mid whitespace-nowrap transition-colors"
         onClick={registerNewArtist}
       >
-        Register
+        Start creating!
       </button>
 
       <p className="text-sm text-pink-mid hover:text-blue-main transition-colors">
