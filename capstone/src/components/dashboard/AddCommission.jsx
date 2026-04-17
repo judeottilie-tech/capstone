@@ -165,7 +165,7 @@ export const AddCommission = ({ currentArtist }) => {
             type="submit"
             className="bg-pink-main text-white rounded-pill px-4 py-2 hover:bg-pink-mid transition mt-2"
           >
-            Create Commission
+            create commission
           </button>
         </form>
       </div>
