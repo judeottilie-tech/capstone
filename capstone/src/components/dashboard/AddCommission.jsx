@@ -55,10 +55,10 @@ export const AddCommission = ({ currentArtist }) => {
     <div className="min-h-screen bg-neutral-soft p-6 flex justify-center">
       <div className="w-full max-w-md bg-white border border-neutral-border rounded-3xl p-6">
         <form onSubmit={handleSave} className="flex flex-col gap-4">
-          <h2 className="text-2xl font-bold text-pink-dark">Add New Commission Type</h2>
+          <h2 className="text-2xl font-bold text-pink-dark">add new commission</h2>
 
           <div>
-            <label className="text-sm font-semibold text-pink-mid">Title</label>
+            <label className="text-sm font-semibold text-pink-mid">title</label>
             <input
               type="text"
               value={commission.title}
@@ -75,7 +75,7 @@ export const AddCommission = ({ currentArtist }) => {
     
           <div>
             <label className="text-sm font-semibold text-pink-mid">
-              Price ($)
+              price ($)
             </label>
             <input
               type="number"
@@ -93,7 +93,7 @@ export const AddCommission = ({ currentArtist }) => {
   
           <div>
             <label className="text-sm font-semibold text-pink-mid">
-              Image URL
+              image URL
             </label>
             <input
               type="text"
@@ -117,7 +117,7 @@ export const AddCommission = ({ currentArtist }) => {
           </div>
 
           <div>
-            <label className="text-sm font-semibold text-pink-mid">Tags</label>
+            <label className="text-sm font-semibold text-pink-mid">tags</label>
 
             <div className="flex flex-wrap gap-2 mt-2">
               {tags.map((tag) => {

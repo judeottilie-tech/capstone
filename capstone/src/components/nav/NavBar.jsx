@@ -11,7 +11,6 @@ export const NavBar = ({ currentArtist }) => {
     navigate("/login")
   }
 
-  // Shared link styles for the mobile menu
   const mobileLinkStyles = ({ isActive }) =>
     `block w-full px-4 py-3 rounded-xl text-sm transition ${
       isActive
@@ -19,7 +18,6 @@ export const NavBar = ({ currentArtist }) => {
         : "text-blue-dark hover:bg-neutral-soft"
     }`
 
-  // Shared link styles for desktop
   const desktopLinkStyles = ({ isActive }) =>
     `px-4 py-2 rounded-pill text-sm transition ${
       isActive ? "bg-pink-dark text-white" : "text-pink-mid hover:bg-pink-light"
@@ -48,17 +46,17 @@ export const NavBar = ({ currentArtist }) => {
               to={`/portfolio/${currentArtist?.username}`}
               className={desktopLinkStyles}
             >
-              My Profile
+              my profile
             </NavLink>
           </li>
           <li>
             <NavLink to="/dashboard/profile/edit" className={desktopLinkStyles}>
-              Edit Profile
+              edit profile
             </NavLink>
           </li>
           <li>
             <NavLink to="/dashboard/add" className={desktopLinkStyles}>
-              Add Commission
+              add commission
             </NavLink>
           </li>
           <li className="ml-auto">
@@ -66,7 +64,7 @@ export const NavBar = ({ currentArtist }) => {
               onClick={handleLogout}
               className="px-4 py-2 rounded-pill text-sm text-pink-mid hover:bg-pink-light transition"
             >
-              Logout
+              logout
             </button>
           </li>
         </ul>
@@ -98,34 +96,34 @@ export const NavBar = ({ currentArtist }) => {
           className={mobileLinkStyles}
           onClick={() => setIsOpen(false)}
         >
-          Dashboard
+          dashboard
         </NavLink>
         <NavLink
           to={`/portfolio/${currentArtist?.username}`}
           className={mobileLinkStyles}
           onClick={() => setIsOpen(false)}
         >
-          My Profile
+          my profile
         </NavLink>
         <NavLink
           to="/dashboard/profile/edit"
           className={mobileLinkStyles}
           onClick={() => setIsOpen(false)}
         >
-          Edit Profile
+          edit profile
         </NavLink>
         <NavLink
           to="/dashboard/add"
           className={mobileLinkStyles}
           onClick={() => setIsOpen(false)}
         >
-          Add Commission
+          add commission
         </NavLink>
         <button
           onClick={handleLogout}
           className="text-left w-full px-4 py-3 rounded-xl text-sm text-pink-mid hover:bg-neutral-soft transition"
         >
-          Logout
+          logout
         </button>
       </div>
     </>

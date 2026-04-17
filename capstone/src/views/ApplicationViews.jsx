@@ -1,6 +1,6 @@
 import React from "react"
 import { useEffect, useState } from "react"
-import { Outlet, Route, Routes } from "react-router-dom"
+import { Outlet, Route, Routes, Navigate, useNavigate } from "react-router-dom"
 import { NavBar } from "../components/nav/NavBar"
 import { Portfolio } from "../components/portfolio/Portfolio"
 import { Dashboard } from "../components/dashboard/Dashboard"
@@ -13,6 +13,7 @@ import { ScrollToTop } from "../views/ScrollToTop"
 export const ApplicationViews = () => {
   const [currentArtist, setCurrentArtist] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const localArtist = localStorage.getItem("portfolio_artist")
@@ -32,6 +33,7 @@ export const ApplicationViews = () => {
 
   return (
     <Routes>
+      <Route index element={<Navigate to="/dashboard" />} />
       <Route
         path="/"
         element={

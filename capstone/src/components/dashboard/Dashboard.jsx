@@ -2,6 +2,30 @@ import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { getCommissionsByArtist, deleteCommission, updateCommission } from "../../services/commissionService"
 
+
+const DashboardImage = ({ src, alt }) => {
+  const [imageLoaded, setImageLoaded] = useState(false)
+
+  return (
+    <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-neutral-border flex-shrink-0 bg-pink-light">
+      {!imageLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-pink-mid animate-pulse text-lg">·</span>
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={`w-full h-full object-cover transition-opacity duration-300 ${
+          imageLoaded ? "opacity-100" : "opacity-0"
+        }`}
+        onLoad={() => setImageLoaded(true)}
+      />
+    </div>
+  )
+}
+
+
 export const Dashboard = ({ currentArtist }) => {
   const [commissions, setCommissions] = useState([])
   const navigate = useNavigate()
@@ -64,27 +88,24 @@ export const Dashboard = ({ currentArtist }) => {
             return (
               <div
                 key={commission.id}
-                className="bg-white border border-neutral-border rounded-xl p-4 flex justify-between items-center"
+                className="bg-white border border-neutral-border rounded-xl p-4 flex justify-between items-center gap-3"
               >
-                <div className="flex items-center gap-3">
-                  
+                <div className="flex items-center gap-3 flex-1 min-w-0">
                   {commission.imageUrl && (
-                    <img
+                    <DashboardImage
                       src={commission.imageUrl}
                       alt={commission.title}
-                      className="w-12 h-12 rounded-lg object-cover border border-neutral-border flex-shrink-0"
                     />
                   )}
-                  <div>
-                    <p className="text-blue-dark font-medium">
+                  <div className="min-w-0">
+                    <p className="text-blue-dark font-medium truncate">
                       {commission.title}
                     </p>
                     <p className="text-sm text-blue-mid">${commission.price}</p>
                   </div>
                 </div>
-                
 
-                <div className="flex gap-2 flex-wrap justify-end">
+                <div className="flex flex-col gap-2 flex-shrink-0">
                   <button
                     onClick={() =>
                       navigate(`/dashboard/commission/${commission.id}/edit`)
@@ -93,7 +114,6 @@ export const Dashboard = ({ currentArtist }) => {
                   >
                     edit
                   </button>
-
                   <button
                     onClick={() => handleDelete(commission.id)}
                     className="text-xs bg-pink-light text-pink-dark px-3 py-1 rounded-pill hover:bg-pink-mid"

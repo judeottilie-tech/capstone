@@ -167,7 +167,7 @@ export const Portfolio = ({ currentArtist }) => {
           onChange={(event) => setSelectedTag(parseInt(event.target.value))}
           className="border border-neutral-border rounded-pill px-5 py-1 text-sm text-blue-dark bg-white"
         >
-          <option value={0}>All</option>
+          <option value={0}>all</option>
           {tags.map((tag) => (
             <option key={tag.id} value={tag.id}>
               {tag.name}
@@ -187,7 +187,7 @@ export const Portfolio = ({ currentArtist }) => {
             />
           ))
         ) : (
-          <p className="text-blue-mid text-sm">No commissions found</p>
+          <p className="text-blue-mid text-sm">no commissions of this type found</p>
         )}
       </div>
     </div>
