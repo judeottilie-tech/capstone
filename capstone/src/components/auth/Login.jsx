@@ -27,7 +27,7 @@ export const Login = () => {
         )
         navigate("/dashboard")
       } else {
-        window.alert("Invalid login")
+        window.alert("invalid login :(")
       }
     })
   }
@@ -38,7 +38,7 @@ export const Login = () => {
         <h1 className="text-5xl font-bold tracking-tight text-pink-main">
           portfol.io
         </h1>
-        <p className="text-pink-main text-sm">Please sign in</p>
+        <p className="text-pink-main text-sm"></p>
         <form onSubmit={handleLogin} className="flex flex-col gap-3">
           <div className="flex gap-2">
             <input
@@ -46,7 +46,7 @@ export const Login = () => {
               type="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              placeholder="Email address"
+              placeholder="email address"
               required
               autoFocus
             />
@@ -54,16 +54,19 @@ export const Login = () => {
               type="submit"
               className="bg-pink-main text-white rounded-pill px-4 py-2 text-sm hover:bg-pink-mid whitespace-nowrap transition-colors"
             >
-              Sign in
+              sign in!
             </button>
           </div>
         </form>
+        <p className="text-sm text-pink-mid hover:text-pink-main transition-colors">
+        not a member yet?{" "}
         <Link
           className="text-sm text-pink-mid hover:text-blue-main transition-colors"
           to="/register"
         >
-          Not a member yet? Click here to register!
+           click here to register!
         </Link>
+        </p>
       </div>
     </div>
   )

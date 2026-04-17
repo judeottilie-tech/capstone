@@ -59,6 +59,30 @@
       "profileLink": "instagram.com",
       "id": 7,
       "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
+    },
+    {
+      "fullName": "Dave",
+      "username": "dave",
+      "email": "dave@dave.com",
+      "bio": "",
+      "profileLink": "",
+      "id": 8
+    },
+    {
+      "fullName": "",
+      "username": "",
+      "email": "",
+      "bio": "",
+      "profileLink": "",
+      "id": 9
+    },
+    {
+      "fullName": "",
+      "username": "",
+      "email": "",
+      "bio": "",
+      "profileLink": "",
+      "id": 10
     }
   ],
   "commissions": [
@@ -84,7 +108,7 @@
       "imageUrl": "https://via.placeholder.com/400x400.png?text=Tattoo+Design"
     },
     {
-      "title": "Pet Portrait",
+      "title": "Pet Portrait (Stylized)",
       "price": 65,
       "imageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-41_orig.png",
       "artistId": 1,
@@ -119,15 +143,8 @@
         "username": "judeottilie",
         "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
         "profileLink": "https://instagram.com/judeottilie",
-        "profileImageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-35_orig.png"
+        "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
       }
-    },
-    {
-      "title": "Sticker Design",
-      "price": 100,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/cardstoretrue1.png",
-      "artistId": 1,
-      "id": 6
     },
     {
       "title": "Pet Portrait",
@@ -200,6 +217,165 @@
         "profileLink": "",
         "id": 7
       }
+    },
+    {
+      "title": "Complex Pet Illustration",
+      "price": 250,
+      "imageUrl": "https://u.cubeupload.com/pinkcupid/IMG5658.jpeg",
+      "artistId": 1,
+      "id": 12,
+      "commissionTags": [
+        {
+          "commissionId": 12,
+          "tagId": 2,
+          "id": 35
+        },
+        {
+          "commissionId": 12,
+          "tagId": 3,
+          "id": 36
+        },
+        {
+          "commissionId": 12,
+          "tagId": 7,
+          "id": 37
+        },
+        {
+          "commissionId": 12,
+          "tagId": 11,
+          "id": 38
+        },
+        {
+          "commissionId": 12,
+          "tagId": 11,
+          "id": 39
+        },
+        {
+          "commissionId": 12,
+          "tagId": 12,
+          "id": 66
+        }
+      ],
+      "proposals": [],
+      "artist": {
+        "id": 1,
+        "fullName": "Jude!",
+        "email": "jude@art.com",
+        "username": "judeottilie",
+        "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
+        "profileLink": "https://instagram.com/judeottilie",
+        "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
+      }
+    },
+    {
+      "title": "Pet Illustration (Sketch)",
+      "price": 25,
+      "imageUrl": "https://u.cubeupload.com/pinkcupid/runekitty.png",
+      "artistId": 1,
+      "id": 15
+    },
+    {
+      "title": "Pet Portrait (Realistic)",
+      "price": 65,
+      "imageUrl": "https://u.cubeupload.com/pinkcupid/petportrait.png",
+      "artistId": 1,
+      "id": 16
+    },
+    {
+      "title": "Sticker Design",
+      "price": 100,
+      "imageUrl": "https://u.cubeupload.com/pinkcupid/cardstoretrue1.png",
+      "artistId": 1,
+      "id": 17,
+      "commissionTags": [
+        {
+          "commissionId": 17,
+          "tagId": 1,
+          "id": 53
+        },
+        {
+          "commissionId": 17,
+          "tagId": 7,
+          "id": 54
+        },
+        {
+          "commissionId": 17,
+          "tagId": 10,
+          "id": 55
+        },
+        {
+          "commissionId": 17,
+          "tagId": 8,
+          "id": 56
+        },
+        {
+          "commissionId": 17,
+          "tagId": 14,
+          "id": 57
+        },
+        {
+          "commissionId": 17,
+          "tagId": 17,
+          "id": 58
+        },
+        {
+          "commissionId": 17,
+          "tagId": 17,
+          "id": 59
+        }
+      ],
+      "proposals": [],
+      "artist": {
+        "id": 1,
+        "fullName": "Jude!",
+        "email": "jude@art.com",
+        "username": "judeottilie",
+        "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
+        "profileLink": "https://instagram.com/judeottilie",
+        "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
+      }
+    },
+    {
+      "title": "Sticker Sheet",
+      "price": 200,
+      "imageUrl": "https://u.cubeupload.com/pinkcupid/violetachrisstickers.png",
+      "artistId": 1,
+      "id": 18
+    },
+    {
+      "title": "Sticker (Graphic)",
+      "price": 100,
+      "imageUrl": "https://u.cubeupload.com/pinkcupid/logo.png",
+      "artistId": 1,
+      "id": 19
+    },
+    {
+      "title": "Pipecleaner Animals",
+      "price": 20,
+      "imageUrl": "https://u.cubeupload.com/pinkcupid/pipecleaner.jpg",
+      "artistId": 8,
+      "id": 20,
+      "commissionTags": [
+        {
+          "commissionId": 20,
+          "tagId": 3,
+          "id": 67
+        },
+        {
+          "commissionId": 20,
+          "tagId": 4,
+          "id": 68
+        }
+      ],
+      "proposals": [],
+      "artist": {
+        "fullName": "Dave",
+        "username": "dave",
+        "email": "dave@dave.com",
+        "bio": "",
+        "profileLink": "",
+        "id": 8
+      }
     }
   ],
   "commissionTags": [
@@ -239,36 +415,6 @@
       "id": 7
     },
     {
-      "commissionId": 6,
-      "tagId": 1,
-      "id": 8
-    },
-    {
-      "commissionId": 6,
-      "tagId": 8,
-      "id": 9
-    },
-    {
-      "commissionId": 6,
-      "tagId": 7,
-      "id": 10
-    },
-    {
-      "commissionId": 6,
-      "tagId": 17,
-      "id": 11
-    },
-    {
-      "commissionId": 6,
-      "tagId": 7,
-      "id": 12
-    },
-    {
-      "commissionId": 6,
-      "tagId": 17,
-      "id": 13
-    },
-    {
       "commissionId": 10,
       "tagId": 1,
       "id": 28
@@ -302,6 +448,151 @@
       "commissionId": 11,
       "tagId": 12,
       "id": 34
+    },
+    {
+      "commissionId": 12,
+      "tagId": 2,
+      "id": 35
+    },
+    {
+      "commissionId": 12,
+      "tagId": 3,
+      "id": 36
+    },
+    {
+      "commissionId": 12,
+      "tagId": 7,
+      "id": 37
+    },
+    {
+      "commissionId": 12,
+      "tagId": 11,
+      "id": 38
+    },
+    {
+      "commissionId": 12,
+      "tagId": 11,
+      "id": 39
+    },
+    {
+      "commissionId": 15,
+      "tagId": 1,
+      "id": 46
+    },
+    {
+      "commissionId": 15,
+      "tagId": 7,
+      "id": 47
+    },
+    {
+      "commissionId": 15,
+      "tagId": 11,
+      "id": 48
+    },
+    {
+      "commissionId": 16,
+      "tagId": 1,
+      "id": 49
+    },
+    {
+      "commissionId": 16,
+      "tagId": 7,
+      "id": 50
+    },
+    {
+      "commissionId": 16,
+      "tagId": 11,
+      "id": 51
+    },
+    {
+      "commissionId": 16,
+      "tagId": 12,
+      "id": 52
+    },
+    {
+      "commissionId": 17,
+      "tagId": 1,
+      "id": 53
+    },
+    {
+      "commissionId": 17,
+      "tagId": 7,
+      "id": 54
+    },
+    {
+      "commissionId": 17,
+      "tagId": 10,
+      "id": 55
+    },
+    {
+      "commissionId": 17,
+      "tagId": 8,
+      "id": 56
+    },
+    {
+      "commissionId": 17,
+      "tagId": 14,
+      "id": 57
+    },
+    {
+      "commissionId": 17,
+      "tagId": 17,
+      "id": 58
+    },
+    {
+      "commissionId": 17,
+      "tagId": 17,
+      "id": 59
+    },
+    {
+      "commissionId": 18,
+      "tagId": 1,
+      "id": 60
+    },
+    {
+      "commissionId": 18,
+      "tagId": 7,
+      "id": 61
+    },
+    {
+      "commissionId": 19,
+      "tagId": 1,
+      "id": 62
+    },
+    {
+      "commissionId": 19,
+      "tagId": 10,
+      "id": 63
+    },
+    {
+      "commissionId": 19,
+      "tagId": 7,
+      "id": 64
+    },
+    {
+      "commissionId": 19,
+      "tagId": 8,
+      "id": 65
+    },
+    {
+      "commissionId": 5,
+      "tagId": 6,
+      "id": 66
+    },
+    {
+      "commissionId": 20,
+      "tagId": 3,
+      "id": 67
+    },
+    {
+      "commissionId": 20,
+      "tagId": 4,
+      "id": 68
+    },
+    {
+      "commissionId": 20,
+      "tagId": 8,
+      "id": 69
     }
   ],
   "tags": [

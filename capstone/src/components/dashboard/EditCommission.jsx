@@ -85,10 +85,10 @@ export const EditCommission = ({ currentArtist }) => {
     <div className="min-h-screen bg-neutral-soft p-6 flex justify-center">
       <div className="w-full max-w-md bg-white border border-neutral-border rounded-3xl p-6">
         <form onSubmit={handleSave} className="flex flex-col gap-4">
-          <h2 className="text-2xl font-bold text-blue-dark">Edit Commission</h2>
+          <h2 className="text-2xl font-bold text-blue-dark">edit commission</h2>
 
           <div>
-            <label className="text-sm font-semibold text-blue-mid">Title</label>
+            <label className="text-sm font-semibold text-blue-mid">title</label>
             <input
               type="text"
               value={commission.title || ""}
@@ -104,7 +104,7 @@ export const EditCommission = ({ currentArtist }) => {
 
           <div>
             <label className="text-sm font-semibold text-blue-mid">
-              Price ($)
+              price ($)
             </label>
             <input
               type="number"
@@ -121,7 +121,7 @@ export const EditCommission = ({ currentArtist }) => {
 
           <div>
             <label className="text-sm font-semibold text-blue-mid">
-              Image URL
+              image URL
             </label>
             <input
               type="text"
@@ -137,14 +137,14 @@ export const EditCommission = ({ currentArtist }) => {
             {commission.imageUrl && (
               <img
                 src={commission.imageUrl}
-                alt="Preview"
+                alt="preview"
                 className="mt-2 rounded-xl max-h-48 object-cover"
               />
             )}
           </div>
 
           <div>
-            <label className="text-sm font-semibold text-blue-mid">Tags</label>
+            <label className="text-sm font-semibold text-blue-mid">tags</label>
 
             <div className="flex flex-wrap gap-2 mt-2">
               {tags.map((tag) => {
@@ -192,7 +192,7 @@ export const EditCommission = ({ currentArtist }) => {
             type="submit"
             className="bg-pink-main text-white rounded-pill px-4 py-2 hover:bg-pink-mid transition mt-2"
           >
-            Save Changes
+            save changes
           </button>
         </form>
       </div>
