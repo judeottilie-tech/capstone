@@ -27,7 +27,7 @@ export const ApplicationViews = () => {
 
   if (isLoading) return null
 
-  console.log("currentArtist", currentArtist)
+  //console.log("currentArtist", currentArtist)
 
   //if (!currentArtist) return null
 
