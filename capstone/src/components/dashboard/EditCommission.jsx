@@ -4,197 +4,323 @@ import {
   getCommissionById,
   updateCommission,
 } from "../../services/commissionService"
-import { getTags } from "../../services/tagService"
 import {
+  getCommissionTagsByCommission,
   createCommissionTag,
   deleteCommissionTag,
-  getCommissionTagsByCommission,
 } from "../../services/commissionTagService"
+import { getTags } from "../../services/tagService"
 
-export const EditCommission = ({ currentArtist }) => {
+export const EditCommission = () => {
   const { id } = useParams()
   const navigate = useNavigate()
 
+  const [commission, setCommission] = useState(null)
   const [tags, setTags] = useState([])
   const [selectedTagIds, setSelectedTagIds] = useState([])
-
-  const [commission, setCommission] = useState({
-    title: "",
-    price: 0,
-    imageUrl: "",
-  })
+  const [existingCommissionTags, setExistingCommissionTags] = useState([])
+  const [imageInputValue, setImageInputValue] = useState("")
 
   useEffect(() => {
-    getTags().then(setTags)
+    Promise.all([
+      getCommissionById(id),
+      getTags(),
+      getCommissionTagsByCommission(id),
+    ]).then(([commissionData, tagsData, commissionTagsData]) => {
+      const normalizedCommission = {
+        id: commissionData.id,
 
-    getCommissionById(id).then((commissionData) => {
-      setCommission(commissionData)
+        title: commissionData.title || "",
+        price: commissionData.price ?? "",
+        description: commissionData.description || "",
 
-      if (commissionData.commissionTags) {
-        const existingTagIds = commissionData.commissionTags.map(
-          (commissionTag) => commissionTag.tagId,
-        )
-        setSelectedTagIds(existingTagIds)
+        images: Array.isArray(commissionData.images)
+          ? commissionData.images
+          : commissionData.imageUrl
+            ? [commissionData.imageUrl]
+            : [],
+
+        artistId: commissionData.artistId,
+        isActive: commissionData.isActive,
+        slots: commissionData.slots,
+
+        pricingOptions: commissionData.pricingOptions || {
+          extraCharacterPercent: 25,
+          backgroundPercent: 50,
+        },
       }
+
+      setCommission(normalizedCommission)
+      setTags(tagsData)
+      setExistingCommissionTags(commissionTagsData)
+
+      const tagIds = commissionTagsData.map(
+        (commissionTag) => commissionTag.tagId,
+      )
+      setSelectedTagIds(tagIds)
     })
   }, [id])
 
-  const handleSave = async (event) => {
+  if (!commission) {
+    return <p className="p-6">loading...</p>
+  }
+
+  const handleSave = (event) => {
     event.preventDefault()
 
-    const commissionId = parseInt(id)
-
-    try {
-      await updateCommission({
-        ...commission,
-        price: parseFloat(commission.price),
-      })
-
-      const existingCommissionTags =
-        await getCommissionTagsByCommission(commissionId)
-
-      const existingTagIds = existingCommissionTags.map(
-        (commissionTag) => commissionTag.tagId,
-      )
-
-      const tagsToAdd = selectedTagIds.filter(
-        (tagId) => !existingTagIds.includes(tagId),
-      )
-
-      const tagsToDelete = existingCommissionTags.filter(
-        (commissionTag) => !selectedTagIds.includes(commissionTag.tagId),
-      )
-
-      await Promise.all([
-        ...tagsToDelete.map((commissionTag) =>
-          deleteCommissionTag(commissionTag.id),
-        ),
-        ...tagsToAdd.map((tagId) =>
-          createCommissionTag({ commissionId, tagId }),
-        ),
-      ])
-
-      navigate("/dashboard")
-    } catch (error) {
-      console.error(error)
-      alert("Something went wrong")
+    if (
+      !commission.title ||
+      commission.price === "" ||
+      commission.images.length === 0
+    ) {
+      window.alert("Please fill out title, price, and at least one image")
+      return
     }
+
+    const updatedCommission = {
+      ...commission,
+      price: parseFloat(commission.price),
+    }
+
+    updateCommission(updatedCommission).then(() => {
+      const deletePromises = existingCommissionTags.map((commissionTag) =>
+        deleteCommissionTag(commissionTag.id),
+      )
+
+      Promise.all(deletePromises).then(() => {
+        const uniqueTagIds = [...new Set(selectedTagIds)]
+
+        const createPromises = uniqueTagIds.map((tagId) =>
+          createCommissionTag({
+            commissionId: commission.id,
+            tagId: tagId,
+          }),
+        )
+
+        Promise.all(createPromises).then(() => {
+          navigate("/dashboard")
+        })
+      })
+    })
   }
 
   return (
-    <div className="min-h-screen bg-neutral-soft p-6 flex justify-center">
-      <div className="w-full max-w-md bg-white border border-neutral-border rounded-3xl p-6">
-        <form onSubmit={handleSave} className="flex flex-col gap-4">
-          <h2 className="text-2xl font-bold text-blue-dark">edit commission</h2>
+    <div className="min-h-screen bg-neutral-soft p-6">
+      <div className="max-w-2xl mx-auto">
+  
+        <button
+          onClick={() => navigate("/dashboard")}
+          className="text-sm text-blue-mid hover:text-blue-dark mb-6 flex items-center gap-1 transition"
+        >
+          ← back to dashboard
+        </button>
 
-          <div>
-            <label className="text-sm font-semibold text-blue-mid">title</label>
-            <input
-              type="text"
-              value={commission.title || ""}
-              onChange={(event) =>
-                setCommission({
-                  ...commission,
-                  title: event.target.value,
-                })
-              }
-              className="w-full border border-neutral-border rounded-pill px-4 py-2 mt-1 outline-none placeholder:text-blue-mid text-blue-dark focus:border-pink-main"
-            />
-          </div>
+        <div className="bg-white border border-neutral-border rounded-2xl p-6">
+          <form onSubmit={handleSave} className="flex flex-col gap-4">
 
-          <div>
-            <label className="text-sm font-semibold text-blue-mid">
-              price ($)
+            <div>
+              <label className="text-xs text-blue-mid mb-1 block">title</label>
+              <input
+                type="text"
+                value={commission.title}
+                onChange={(event) =>
+                  setCommission({
+                    ...commission,
+                    title: event.target.value,
+                  })
+                }
+                className="w-full border border-blue-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark placeholder:text-blue-mid focus:border-blue-main"
+              />
+            </div>
+
+            <div>
+              <label className="text-xs text-blue-mid mb-1 block">price</label>
+              <input
+                type="number"
+                value={commission.price}
+                onChange={(event) =>
+                  setCommission({
+                    ...commission,
+                    price: event.target.value,
+                  })
+                }
+                className="w-full border border-blue-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark placeholder:text-blue-mid focus:border-blue-main"
+              />
+            </div>
+
+            <div>
+              <label className="text-xs text-blue-mid mb-1 block">
+                description
+              </label>
+              <textarea
+                value={commission.description}
+                onChange={(event) =>
+                  setCommission({
+                    ...commission,
+                    description: event.target.value,
+                  })
+                }
+                className="w-full border border-blue-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark placeholder:text-blue-mid focus:border-blue-main"
+              />
+            </div>
+
+            <div>
+              <label className="text-xs text-blue-mid mb-1 block">
+                image URL
+              </label>
+
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={imageInputValue}
+                  onChange={(event) => setImageInputValue(event.target.value)}
+                  className="w-full border border-blue-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark placeholder:text-blue-mid focus:border-blue-main"
+                />
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (!imageInputValue) return
+
+                    setCommission({
+                      ...commission,
+                      images: [...commission.images, imageInputValue],
+                    })
+
+                    setImageInputValue("")
+                  }}
+                  className="bg-blue-main text-white px-3 rounded-pill"
+                >
+                  add
+                </button>
+              </div>
+            </div>
+
+            {commission.images.length > 0 && (
+              <div className="flex gap-2 mt-2 overflow-x-auto">
+                {commission.images.map((imageUrl, index) => (
+                  <div key={index} className="relative">
+                    <img
+                      src={imageUrl}
+                      className="h-24 w-24 object-cover rounded-lg"
+                    />
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const updatedImages = commission.images.filter(
+                          (imageUrlItem, imageIndex) => imageIndex !== index,
+                        )
+
+                        setCommission({
+                          ...commission,
+                          images: updatedImages,
+                        })
+                      }}
+                      className="absolute top-0 right-0 bg-black/60 text-white text-xs px-1 rounded"
+                    >
+                      x
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <label className="text-xs text-blue-mid mb-1 block">
+              extra character %
             </label>
             <input
               type="number"
-              value={commission.price || ""}
+              value={commission.pricingOptions?.extraCharacterPercent ?? 25}
               onChange={(event) =>
                 setCommission({
                   ...commission,
-                  price: event.target.value,
+                  pricingOptions: {
+                    ...commission.pricingOptions,
+                    extraCharacterPercent: parseFloat(event.target.value),
+                  },
                 })
               }
-              className="w-full border border-neutral-border rounded-pill px-4 py-2 mt-1 outline-none placeholder:text-blue-mid text-blue-dark focus:border-pink-main"
+              className="w-full border border-blue-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark focus:border-blue-main"
             />
-          </div>
 
-          <div>
-            <label className="text-sm font-semibold text-blue-mid">
-              image URL
+            <label className="text-xs text-blue-mid mb-1 block">
+              background %
             </label>
             <input
-              type="text"
-              value={commission.imageUrl || ""}
+              type="number"
+              value={commission.pricingOptions?.backgroundPercent ?? 50}
               onChange={(event) =>
                 setCommission({
                   ...commission,
-                  imageUrl: event.target.value,
+                  pricingOptions: {
+                    ...commission.pricingOptions,
+                    backgroundPercent: parseFloat(event.target.value),
+                  },
                 })
               }
-              className="w-full border border-neutral-border rounded-pill px-4 py-2 mt-1 outline-none placeholder:text-blue-mid text-blue-dark focus:border-pink-main"
+              className="w-full border border-blue-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark focus:border-blue-main"
             />
-            {commission.imageUrl && (
-              <img
-                src={commission.imageUrl}
-                alt="preview"
-                className="mt-2 rounded-xl max-h-48 object-cover"
-              />
-            )}
-          </div>
 
-          <div>
-            <label className="text-sm font-semibold text-blue-mid">tags</label>
+            <div>
+              <label className="text-xs text-blue-mid mb-1 block">tags</label>
 
-            <div className="flex flex-wrap gap-2 mt-2">
-              {tags.map((tag) => {
-                return (
-                  <label
-                    key={tag.id}
-                    className={`px-3 py-1 rounded-pill text-sm cursor-pointer border transition ${
-                      selectedTagIds.includes(tag.id)
-                        ? "bg-blue-main text-white border-blue-main"
-                        : "bg-white text-blue-mid border-neutral-border hover:bg-blue-light"
-                    }`}
-                  >
-                    <input
-                      type="checkbox"
-                      value={tag.id}
-                      checked={selectedTagIds.includes(tag.id)}
-                      onChange={(event) => {
-                        const tagId = parseInt(event.target.value)
+              <div className="flex flex-wrap gap-2">
+                {tags.map((tag) => {
+                  const isSelected = selectedTagIds.includes(tag.id)
 
-                        if (event.target.checked) {
-                          setSelectedTagIds((previousTagIds) => {
-                            if (previousTagIds.includes(tagId))
-                              return previousTagIds
-                            return [...previousTagIds, tagId]
-                          })
-                        } else {
-                          setSelectedTagIds((previousTagIds) =>
-                            previousTagIds.filter(
-                              (existingTagId) => existingTagId !== tagId,
-                            ),
-                          )
-                        }
-                      }}
-                      className="hidden"
-                    />
+                  return (
+                    <label
+                      key={tag.id}
+                      className="relative group cursor-pointer"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={isSelected}
+                        onChange={() => {
+                          if (isSelected) {
+                            setSelectedTagIds((previousTagIds) =>
+                              previousTagIds.filter(
+                                (existingTagId) => existingTagId !== tag.id,
+                              ),
+                            )
+                          } else {
+                            setSelectedTagIds((previousTagIds) => [
+                              ...previousTagIds,
+                              tag.id,
+                            ])
+                          }
+                        }}
+                        className="hidden"
+                      />
 
-                    {tag.name}
-                  </label>
-                )
-              })}
+                      <span
+                        className={`px-3 py-1 rounded-pill text-sm border ${
+                          isSelected
+                            ? "bg-blue-main text-white border-blue-main"
+                            : "bg-white text-blue-mid border-neutral-border hover:bg-blue-light"
+                        }`}
+                      >
+                        {tag.name}
+                      </span>
+
+                      <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 hidden group-hover:block bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
+                        {tag.name}
+                      </span>
+                    </label>
+                  )
+                })}
+              </div>
             </div>
-          </div>
 
-          <button
-            type="submit"
-            className="bg-pink-main text-white rounded-pill px-4 py-2 hover:bg-pink-mid transition mt-2"
-          >
-            save changes
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="bg-pink-main text-white rounded-pill px-4 py-2 hover:bg-pink-mid transition mt-2"
+            >
+              save changes
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   )

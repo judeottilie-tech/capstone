@@ -9,6 +9,7 @@ import { EditCommission } from "../components/dashboard/EditCommission"
 import { EditProfile } from "../components/dashboard/EditProfile"
 import { Authorized } from "../views/Authorized"
 import { ScrollToTop } from "../views/ScrollToTop"
+import { CommissionDetail } from "../components/commission/CommissionDetail"
 
 export const ApplicationViews = () => {
   const [currentArtist, setCurrentArtist] = useState(null)
@@ -74,6 +75,11 @@ export const ApplicationViews = () => {
               <EditCommission currentArtist={currentArtist} />
             </Authorized>
           }
+        />
+
+        <Route
+          path="commission/:id"
+          element={<CommissionDetail currentArtist={currentArtist} />}
         />
 
         <Route

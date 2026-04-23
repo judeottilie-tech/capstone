@@ -5,14 +5,14 @@ export const getAllCommissions = () => {
 }
 
 export const getCommissionById = (id) => {
-  return fetch(
-    `http://localhost:8088/commissions/${id}?_embed=commissionTags&_expand=artist&_embed=proposals`,
-  ).then((res) => res.json())
+  return fetch(`http://localhost:8088/commissions/${id}?_expand=artist`).then(
+    (res) => res.json(),
+  )
 }
 
 export const getCommissionsByArtist = (artistId) => {
   return fetch(
-    `http://localhost:8088/commissions?artistId=${artistId}&_embed=commissionTags`,
+    `http://localhost:8088/commissions?artistId=${artistId}&_embed=proposals`,
   ).then((res) => res.json())
 }
 

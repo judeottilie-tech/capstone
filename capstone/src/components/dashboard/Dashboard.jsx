@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { getCommissionsByArtist, deleteCommission, updateCommission } from "../../services/commissionService"
+import { Proposals } from "./Proposals"
 
 
 const DashboardImage = ({ src, alt }) => {
@@ -29,23 +30,29 @@ const DashboardImage = ({ src, alt }) => {
 export const Dashboard = ({ currentArtist }) => {
   const [commissions, setCommissions] = useState([])
   const navigate = useNavigate()
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.state?.refresh) {
+      fetchCommissions()
+    }
+  }, [location])
 
   useEffect(() => {
     if (!currentArtist?.id) return
-
-    getCommissionsByArtist(currentArtist.id).then(setCommissions)
+    fetchCommissions()
   }, [currentArtist])
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
   
+  const fetchCommissions = () => {
+    getCommissionsByArtist(currentArtist.id).then(setCommissions)
+  }
+
   const handleDelete = (commissionId) => {
-    deleteCommission(commissionId).then(() => {
-      getCommissionsByArtist(currentArtist.id).then((commissionsArray) => {
-        setCommissions(commissionsArray)
-      })
-    })
+    deleteCommission(commissionId).then(fetchCommissions)
   }
 
  /*const handleToggleActive = (commission) => {
@@ -91,17 +98,17 @@ export const Dashboard = ({ currentArtist }) => {
                 className="bg-white border border-neutral-border rounded-xl p-4 flex justify-between items-center gap-3"
               >
                 <div className="flex items-center gap-3 flex-1 min-w-0">
-                  {commission.imageUrl && (
-                    <DashboardImage
-                      src={commission.imageUrl}
-                      alt={commission.title}
-                    />
+                  {commission.images?.[0] && (
+                    <DashboardImage src={commission.images?.[0]} />
                   )}
                   <div className="min-w-0">
                     <p className="text-blue-dark font-medium truncate">
                       {commission.title}
                     </p>
                     <p className="text-sm text-blue-mid">${commission.price}</p>
+                    <p className="text-xs text-blue-mid">
+                      {commission.proposals?.length || 0} proposals
+                    </p>
                   </div>
                 </div>
 
@@ -125,7 +132,14 @@ export const Dashboard = ({ currentArtist }) => {
             )
           })}
         </div>
+        
+        <div className="mt-8">
+          <Proposals currentArtist={currentArtist} />
+          
+        </div>
+        
       </div>
+      
     </div>
   )
 }
