@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { createProposal } from "../../../src/services/proposalService"
+import { createProposal } from "../../services/proposalService"
 
 export const ProposalForm = ({ commission }) => {
   const [submitted, setSubmitted] = useState(false)
@@ -13,6 +13,12 @@ export const ProposalForm = ({ commission }) => {
     estimatedPrice: "",
     referenceImageUrl: "",
   })
+
+  const base = commission?.basePrice || commission?.price || 0
+  const extraCharacters = Math.max(characterCount - 1, 0)
+
+  let estimate = base + base * 0.25 * extraCharacters
+  if (hasBackground) estimate += base * 0.5
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -61,11 +67,7 @@ export const ProposalForm = ({ commission }) => {
     )
   }
 
-  const base = commission?.basePrice || commission?.price || 0
-  const extraCharacters = Math.max(characterCount - 1, 0)
-
-  let estimate = base + base * 0.25 * extraCharacters
-  if (hasBackground) estimate += base * 0.5
+  
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">

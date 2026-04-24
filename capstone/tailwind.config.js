@@ -20,6 +20,12 @@ export default {
           soft: "#fdf6f9",
           border: "#f0d6e4",
         },
+        gray: {
+          light: "#cfcfcf",
+          mid: "#a1a1a1",
+          main: "#919191",
+          dark: "#4d4d4d",
+        },
       },
       borderRadius: {
         pill: "9999px",

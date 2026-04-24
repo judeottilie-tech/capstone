@@ -19,7 +19,7 @@ export const createProposal = (proposal) => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(proposal),
-  })
+  }).then((res) => res.json())
 }
 
 export const updateProposal = (proposal) => {

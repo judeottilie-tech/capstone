@@ -55,7 +55,7 @@ export const Dashboard = ({ currentArtist }) => {
     deleteCommission(commissionId).then(fetchCommissions)
   }
 
- /*const handleToggleActive = (commission) => {
+ const handleToggleActive = (commission) => {
     const updatedCommission = {
       ...commission,
       isActive: !commission.isActive,
@@ -64,15 +64,6 @@ export const Dashboard = ({ currentArtist }) => {
     updateCommission(updatedCommission).then(fetchCommissions)
   }
 
-  const handleToggleClosed = (commission) => {
-    const updatedCommission = {
-      ...commission,
-      isClosed: !commission.isClosed,
-    }
-
-    updateCommission(updatedCommission).then(fetchCommissions)
-  }
-    */
 
   return (
     <div className="min-h-screen bg-neutral-soft p-6">
@@ -106,13 +97,20 @@ export const Dashboard = ({ currentArtist }) => {
                       {commission.title}
                     </p>
                     <p className="text-sm text-blue-mid">${commission.price}</p>
-                    <p className="text-xs text-blue-mid">
-                      {commission.proposals?.length || 0} proposals
-                    </p>
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-2 flex-shrink-0">
+                  <button
+                    onClick={() => handleToggleActive(commission)}
+                    className={`text-xs px-3 py-1 rounded-pill transition ${
+                      commission.isActive
+                        ? "bg-blue-light text-blue-dark hover:bg-blue-mid"
+                        : "bg-gray-mid text-gray-dark hover:bg-gray-mid"
+                    }`}
+                  >
+                    {commission.isActive ? "active" : "inactive"}
+                  </button>
                   <button
                     onClick={() =>
                       navigate(`/dashboard/commission/${commission.id}/edit`)
@@ -146,6 +144,13 @@ export const Dashboard = ({ currentArtist }) => {
 
 
 /*add later-
+IMPORTANT:
+
+<p className="text-xs text-blue-mid">
+                      {commission.proposals?.length || 0} proposals
+                    </p>
+
+
 
 
 

@@ -2,15 +2,18 @@ import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { getCommissionById } from "../../services/commissionService"
 import { ProposalForm } from "./ProposalForm"
+import { getTags } from "../../services/tagService"
 
 export const CommissionDetail = ({ currentArtist }) => {
   const { id } = useParams()
   const navigate = useNavigate()
-
+  const [lightboxImage, setLightboxImage] = useState(null)
   const [commission, setCommission] = useState(null)
+  const [tags, setTags] = useState([])
 
   useEffect(() => {
-    getCommissionById(id).then((data) => {
+    Promise.all([getCommissionById(id), getTags()]).then(([data, tagsData]) => {
+      setTags(tagsData)
       // normalize data so it never breaks
       const normalized = {
         ...data,
@@ -48,7 +51,6 @@ export const CommissionDetail = ({ currentArtist }) => {
         </button>
 
         <div className="bg-white border border-neutral-border rounded-2xl overflow-hidden">
-          {/* ✅ IMAGE GRID */}
           {commission.images.length > 0 && (
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-2 bg-pink-light">
               {commission.images.map((img, index) => (
@@ -56,7 +58,8 @@ export const CommissionDetail = ({ currentArtist }) => {
                   key={index}
                   src={img}
                   alt="commission example"
-                  className="w-full h-48 object-cover rounded-lg"
+                  className="w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-90 transition"
+                  onClick={() => setLightboxImage(img)}
                 />
               ))}
             </div>
@@ -102,6 +105,24 @@ export const CommissionDetail = ({ currentArtist }) => {
           </div>
         </div>
       </div>
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setLightboxImage(null)}
+        >
+          <img
+            src={lightboxImage}
+            alt="full size"
+            className="max-w-full max-h-full rounded-xl object-contain"
+          />
+          <button
+            onClick={() => setLightboxImage(null)}
+            className="absolute top-4 right-4 text-white text-2xl bg-black/40 w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/60 transition"
+          >
+            ×
+          </button>
+        </div>
+      )}
     </div>
   )
 }
