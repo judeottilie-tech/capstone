@@ -12,7 +12,7 @@ export const getCommissionById = (id) => {
 
 export const getCommissionsByArtist = (artistId) => {
   return fetch(
-    `http://localhost:8088/commissions?artistId=${artistId}&_embed=proposals`,
+    `http://localhost:8088/commissions?artistId=${artistId}&_embed=commissionTags&_embed=proposals`,
   ).then((res) => res.json())
 }
 

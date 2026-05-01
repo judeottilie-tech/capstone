@@ -5,570 +5,108 @@
       "fullName": "Jude!",
       "email": "jude@art.com",
       "username": "judeottilie",
-      "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
+      "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets. hehe",
       "profileLink": "https://instagram.com/judeottilie",
       "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
     },
     {
-      "id": 2,
-      "fullName": "Punch Art",
-      "email": "punch@art.com",
-      "username": "punch",
-      "bio": "Traditional and digital illustrator.",
-      "profileLink": "https://instagram.com/punch"
-    },
-    {
-      "id": 3,
-      "fullName": "Luna Sketch",
-      "email": "luna@art.com",
-      "username": "lunasketch",
-      "bio": "Soft anime-style commissions and character art.",
-      "profileLink": "https://instagram.com/lunasketch"
-    },
-    {
-      "id": 4,
-      "fullName": "InkForge",
-      "email": "ink@art.com",
-      "username": "inkforge",
-      "bio": "Dark fantasy and tattoo-style illustrations.",
-      "profileLink": "https://instagram.com/inkforge"
-    },
-    {
-      "fullName": "Kitty",
-      "username": "kittycat",
-      "email": "cat@cat.com",
-      "bio": "hiii im a cat meow",
-      "profileLink": "instagram.com",
-      "id": 5,
-      "profileImageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-19_orig.png"
-    },
-    {
-      "fullName": "Milam",
-      "username": "pieliker49",
-      "email": "pieliker@pie.com",
-      "bio": "im a big boy!",
-      "profileLink": "instagram.com",
-      "id": 6,
-      "profileImageUrl": "https://u.cubeupload.com/pinkcupid/980FE25336C8479B8284.jpg"
-    },
-    {
-      "fullName": "jude",
-      "username": "jude",
-      "email": "jude@jude.com",
-      "bio": "hehehehehe",
-      "profileLink": "instagram.com",
-      "id": 7,
-      "profileImageUrl": "https://u.cubeupload.com/pinkcupid/980FE25336C8479B8284.jpg"
-    },
-    {
-      "fullName": "Dave",
-      "username": "dave",
-      "email": "dave@dave.com",
-      "bio": "",
-      "profileLink": "",
-      "id": 8
-    },
-    {
-      "fullName": "",
-      "username": "",
-      "email": "",
-      "bio": "",
-      "profileLink": "",
-      "id": 9
-    },
-    {
-      "fullName": "",
-      "username": "",
-      "email": "",
-      "bio": "",
-      "profileLink": "",
-      "id": 10
-    },
-    {
-      "fullName": "cat",
+      "fullName": "kitty",
       "username": "cat",
-      "email": "cat@cat.com",
+      "email": "kitty@cat.com",
       "bio": "",
       "profileLink": "",
-      "id": 11
+      "id": 2
+    },
+    {
+      "fullName": "me",
+      "username": "meme",
+      "email": "me@me.com",
+      "bio": "",
+      "profileLink": "",
+      "id": 3
     }
   ],
   "commissions": [
     {
       "id": 2,
-      "artistId": 2,
-      "title": "Landscape Illustration",
-      "price": 80,
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/24701-nature-natural-beauty.jpg/1280px-24701-nature-natural-beauty.jpg"
+      "title": "Pet Illustration",
+      "description": "Full pet illustration with background.",
+      "price": 300,
+      "images": [
+        "https://u.cubeupload.com/pinkcupid/IMG5658.jpeg"
+      ],
+      "artistId": 1,
+      "isActive": true,
+      "slots": 3,
+      "pricingOptions": {
+        "extraCharacterPercent": 25,
+        "backgroundPercent": 50
+      },
+      "proposals": [
+        {
+          "id": 1,
+          "contactEmail": "hehe@haha.com",
+          "description": "draw this pghghtb",
+          "selectedOptions": "",
+          "estimatedPrice": "",
+          "referenceImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr_-62a40u3lSIyRP5EKOjJeQiZROwTeVCOQ&s",
+          "commissionId": 2,
+          "isResponded": true,
+          "status": "complete"
+        },
+        {
+          "contactEmail": "kitty@cat.com",
+          "description": "a big kitty",
+          "referenceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mudball_%282017_photo%3B_cropped_2022%29.jpg",
+          "estimatedPrice": 450,
+          "commissionId": 2,
+          "isResponded": false,
+          "status": "in progress",
+          "id": 3
+        }
+      ]
     },
     {
       "id": 3,
-      "artistId": 3,
-      "title": "Anime Character",
-      "price": 90,
-      "imageUrl": "https://via.placeholder.com/400x400.png?text=Anime+Art"
-    },
-    {
-      "id": 4,
-      "artistId": 4,
-      "title": "Tattoo Design",
-      "price": 120,
-      "imageUrl": "https://via.placeholder.com/400x400.png?text=Tattoo+Design"
-    },
-    {
-      "title": "Pet Portrait (Stylized)",
-      "price": 65,
-      "imageUrl": "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-41_orig.png",
+      "title": "Pet Sketch",
+      "price": 10,
+      "description": "Quick sketch of your pet.",
+      "images": [
+        "https://u.cubeupload.com/pinkcupid/runekitty.png",
+        "https://u.cubeupload.com/pinkcupid/caelankittiez.png"
+      ],
       "artistId": 1,
-      "id": 5,
+      "isActive": true,
+      "slots": 3,
+      "pricingOptions": {
+        "extraCharacterPercent": 25,
+        "backgroundPercent": 50
+      },
       "commissionTags": [
         {
-          "commissionId": 5,
+          "commissionId": 3,
           "tagId": 11,
+          "id": 3
+        },
+        {
+          "commissionId": 3,
+          "tagId": 7,
           "id": 4
-        },
-        {
-          "commissionId": 5,
-          "tagId": 7,
-          "id": 5
-        },
-        {
-          "commissionId": 5,
-          "tagId": 12,
-          "id": 6
-        },
-        {
-          "commissionId": 5,
-          "tagId": 1,
-          "id": 7
         }
       ],
-      "proposals": [],
-      "artist": {
-        "id": 1,
-        "fullName": "Jude!",
-        "email": "jude@art.com",
-        "username": "judeottilie",
-        "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
-        "profileLink": "https://instagram.com/judeottilie",
-        "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
-      }
-    },
-    {
-      "title": "Pet Portrait",
-      "price": 100000,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/petportrait.png",
-      "artistId": 6,
-      "id": 10,
-      "commissionTags": [
+      "proposals": [
         {
-          "commissionId": 10,
-          "tagId": 1,
-          "id": 28
-        },
-        {
-          "commissionId": 10,
-          "tagId": 11,
-          "id": 29
-        },
-        {
-          "commissionId": 10,
-          "tagId": 12,
-          "id": 30
-        },
-        {
-          "commissionId": 10,
-          "tagId": 7,
-          "id": 31
-        },
-        {
-          "commissionId": 10,
-          "tagId": 4,
-          "id": 32
+          "id": 2,
+          "contactEmail": "lol@lol.com",
+          "description": "can you peieurjfjgfkfdlgkjfd",
+          "selectedOptions": "",
+          "estimatedPrice": "",
+          "referenceImageUrl": "https://www.catster.com/wp-content/uploads/2023/11/big-shaggy-cat-is-very-funny-standing-with-grooming-tools_Popel-Arseniy_Shutterstock.jpg",
+          "commissionId": 3,
+          "isResponded": true,
+          "status": "sketching"
         }
-      ],
-      "proposals": [],
-      "artist": {
-        "fullName": "Milam",
-        "username": "pieliker49",
-        "email": "pieliker@pie.com",
-        "bio": "im a big boy!",
-        "profileLink": "instagram.com",
-        "id": 6,
-        "profileImageUrl": "https://u.cubeupload.com/pinkcupid/980FE25336C8479B8284.jpg"
-      }
-    },
-    {
-      "title": "Sticker",
-      "price": 50,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/cardstoretrue1.png",
-      "artistId": 7,
-      "id": 11,
-      "commissionTags": [
-        {
-          "commissionId": 11,
-          "tagId": 1,
-          "id": 32
-        },
-        {
-          "commissionId": 11,
-          "tagId": 7,
-          "id": 33
-        }
-      ],
-      "proposals": [],
-      "artist": {
-        "fullName": "jude",
-        "username": "jude",
-        "email": "jude@jude.com",
-        "bio": "",
-        "profileLink": "",
-        "id": 7
-      }
-    },
-    {
-      "title": "Complex Pet Illustration",
-      "price": 250,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/IMG5658.jpeg",
-      "artistId": 1,
-      "id": 12,
-      "commissionTags": [
-        {
-          "commissionId": 12,
-          "tagId": 2,
-          "id": 35
-        },
-        {
-          "commissionId": 12,
-          "tagId": 3,
-          "id": 36
-        },
-        {
-          "commissionId": 12,
-          "tagId": 7,
-          "id": 37
-        },
-        {
-          "commissionId": 12,
-          "tagId": 11,
-          "id": 38
-        },
-        {
-          "commissionId": 12,
-          "tagId": 11,
-          "id": 39
-        },
-        {
-          "commissionId": 12,
-          "tagId": 12,
-          "id": 66
-        }
-      ],
-      "proposals": [],
-      "artist": {
-        "id": 1,
-        "fullName": "Jude!",
-        "email": "jude@art.com",
-        "username": "judeottilie",
-        "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
-        "profileLink": "https://instagram.com/judeottilie",
-        "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
-      }
-    },
-    {
-      "title": "Pet Illustration (Sketch)",
-      "price": 25,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/runekitty.png",
-      "artistId": 1,
-      "id": 15
-    },
-    {
-      "title": "Pet Portrait (Realistic)",
-      "price": 65,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/petportrait.png",
-      "artistId": 1,
-      "id": 16
-    },
-    {
-      "title": "Sticker Design",
-      "price": 100,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/cardstoretrue1.png",
-      "artistId": 1,
-      "id": 17,
-      "commissionTags": [
-        {
-          "commissionId": 17,
-          "tagId": 1,
-          "id": 53
-        },
-        {
-          "commissionId": 17,
-          "tagId": 7,
-          "id": 54
-        },
-        {
-          "commissionId": 17,
-          "tagId": 10,
-          "id": 55
-        },
-        {
-          "commissionId": 17,
-          "tagId": 8,
-          "id": 56
-        },
-        {
-          "commissionId": 17,
-          "tagId": 14,
-          "id": 57
-        },
-        {
-          "commissionId": 17,
-          "tagId": 17,
-          "id": 58
-        },
-        {
-          "commissionId": 17,
-          "tagId": 17,
-          "id": 59
-        }
-      ],
-      "proposals": [],
-      "artist": {
-        "id": 1,
-        "fullName": "Jude!",
-        "email": "jude@art.com",
-        "username": "judeottilie",
-        "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
-        "profileLink": "https://instagram.com/judeottilie",
-        "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
-      }
-    },
-    {
-      "title": "Sticker Sheet",
-      "price": 200,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/violetachrisstickers.png",
-      "artistId": 1,
-      "id": 18
-    },
-    {
-      "title": "Pipecleaner Animals",
-      "price": 20,
-      "imageUrl": "https://u.cubeupload.com/pinkcupid/pipecleaner.jpg",
-      "artistId": 8,
-      "id": 20,
-      "commissionTags": [
-        {
-          "commissionId": 20,
-          "tagId": 3,
-          "id": 67
-        },
-        {
-          "commissionId": 20,
-          "tagId": 4,
-          "id": 68
-        }
-      ],
-      "proposals": [],
-      "artist": {
-        "fullName": "Dave",
-        "username": "dave",
-        "email": "dave@dave.com",
-        "bio": "",
-        "profileLink": "",
-        "id": 8
-      }
-    }
-  ],
-  "commissionTags": [
-    {
-      "id": 1,
-      "commissionId": 2,
-      "tagId": 2
-    },
-    {
-      "id": 2,
-      "commissionId": 2,
-      "tagId": 16
-    },
-    {
-      "id": 3,
-      "commissionId": 3,
-      "tagId": 1
-    },
-    {
-      "commissionId": 5,
-      "tagId": 11,
-      "id": 4
-    },
-    {
-      "commissionId": 5,
-      "tagId": 7,
-      "id": 5
-    },
-    {
-      "commissionId": 5,
-      "tagId": 12,
-      "id": 6
-    },
-    {
-      "commissionId": 5,
-      "tagId": 1,
-      "id": 7
-    },
-    {
-      "commissionId": 10,
-      "tagId": 1,
-      "id": 28
-    },
-    {
-      "commissionId": 10,
-      "tagId": 11,
-      "id": 29
-    },
-    {
-      "commissionId": 10,
-      "tagId": 12,
-      "id": 30
-    },
-    {
-      "commissionId": 10,
-      "tagId": 7,
-      "id": 31
-    },
-    {
-      "commissionId": 11,
-      "tagId": 1,
-      "id": 32
-    },
-    {
-      "commissionId": 11,
-      "tagId": 7,
-      "id": 33
-    },
-    {
-      "commissionId": 11,
-      "tagId": 12,
-      "id": 34
-    },
-    {
-      "commissionId": 12,
-      "tagId": 2,
-      "id": 35
-    },
-    {
-      "commissionId": 12,
-      "tagId": 3,
-      "id": 36
-    },
-    {
-      "commissionId": 12,
-      "tagId": 7,
-      "id": 37
-    },
-    {
-      "commissionId": 12,
-      "tagId": 11,
-      "id": 38
-    },
-    {
-      "commissionId": 12,
-      "tagId": 11,
-      "id": 39
-    },
-    {
-      "commissionId": 15,
-      "tagId": 1,
-      "id": 46
-    },
-    {
-      "commissionId": 15,
-      "tagId": 7,
-      "id": 47
-    },
-    {
-      "commissionId": 15,
-      "tagId": 11,
-      "id": 48
-    },
-    {
-      "commissionId": 16,
-      "tagId": 1,
-      "id": 49
-    },
-    {
-      "commissionId": 16,
-      "tagId": 7,
-      "id": 50
-    },
-    {
-      "commissionId": 16,
-      "tagId": 11,
-      "id": 51
-    },
-    {
-      "commissionId": 16,
-      "tagId": 12,
-      "id": 52
-    },
-    {
-      "commissionId": 17,
-      "tagId": 1,
-      "id": 53
-    },
-    {
-      "commissionId": 17,
-      "tagId": 7,
-      "id": 54
-    },
-    {
-      "commissionId": 17,
-      "tagId": 10,
-      "id": 55
-    },
-    {
-      "commissionId": 17,
-      "tagId": 8,
-      "id": 56
-    },
-    {
-      "commissionId": 17,
-      "tagId": 14,
-      "id": 57
-    },
-    {
-      "commissionId": 17,
-      "tagId": 17,
-      "id": 58
-    },
-    {
-      "commissionId": 17,
-      "tagId": 17,
-      "id": 59
-    },
-    {
-      "commissionId": 18,
-      "tagId": 1,
-      "id": 60
-    },
-    {
-      "commissionId": 18,
-      "tagId": 7,
-      "id": 61
-    },
-    {
-      "commissionId": 20,
-      "tagId": 3,
-      "id": 67
-    },
-    {
-      "commissionId": 20,
-      "tagId": 4,
-      "id": 68
-    },
-    {
-      "commissionId": 20,
-      "tagId": 8,
-      "id": 69
+      ]
     }
   ],
   "tags": [
@@ -577,76 +115,78 @@
       "name": "digital"
     },
     {
-      "id": 2,
-      "name": "traditional"
-    },
-    {
-      "id": 3,
-      "name": "mixed media"
-    },
-    {
-      "id": 4,
-      "name": "clay"
-    },
-    {
-      "id": 5,
-      "name": "sculpture"
-    },
-    {
-      "id": 6,
-      "name": "animated"
-    },
-    {
       "id": 7,
       "name": "illustration"
     },
     {
-      "id": 8,
-      "name": "graphic design"
-    },
-    {
-      "id": 9,
-      "name": "icon"
-    },
-    {
-      "id": 10,
-      "name": "logo"
-    },
-    {
       "id": 11,
       "name": "pet"
+    }
+  ],
+  "commissionTags": [
+    {
+      "id": 1,
+      "commissionId": 2,
+      "tagId": 7
     },
     {
-      "id": 12,
-      "name": "portrait"
+      "id": 2,
+      "commissionId": 2,
+      "tagId": 11
     },
     {
-      "id": 13,
-      "name": "couple portrait"
+      "commissionId": 3,
+      "tagId": 11,
+      "id": 3
     },
     {
-      "id": 14,
-      "name": "character"
+      "commissionId": 3,
+      "tagId": 7,
+      "id": 4
+    }
+  ],
+  "proposals": [
+    {
+      "id": 1,
+      "contactEmail": "hehe@haha.com",
+      "description": "draw this pghghtb",
+      "selectedOptions": "",
+      "estimatedPrice": "",
+      "referenceImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr_-62a40u3lSIyRP5EKOjJeQiZROwTeVCOQ&s",
+      "commissionId": 2,
+      "isResponded": true,
+      "status": "complete"
     },
     {
-      "id": 15,
-      "name": "fantasy"
+      "id": 2,
+      "contactEmail": "lol@lol.com",
+      "description": "can you peieurjfjgfkfdlgkjfd",
+      "selectedOptions": "",
+      "estimatedPrice": "",
+      "referenceImageUrl": "https://www.catster.com/wp-content/uploads/2023/11/big-shaggy-cat-is-very-funny-standing-with-grooming-tools_Popel-Arseniy_Shutterstock.jpg",
+      "commissionId": 3,
+      "isResponded": true,
+      "status": "sketching"
     },
     {
-      "id": 16,
-      "name": "watercolor"
+      "contactEmail": "kitty@cat.com",
+      "description": "a big kitty",
+      "referenceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mudball_%282017_photo%3B_cropped_2022%29.jpg",
+      "estimatedPrice": 450,
+      "commissionId": 2,
+      "isResponded": false,
+      "status": "pending",
+      "id": 3
     },
     {
-      "id": 17,
-      "name": "anime"
-    },
-    {
-      "id": 18,
-      "name": "tattoo design"
-    },
-    {
-      "id": 19,
-      "name": "tattoo flash"
+      "contactEmail": "hi@hi.com",
+      "description": "id like a cat",
+      "referenceImageUrl": "https://u.cubeupload.com/pinkcupid/runekitty.png",
+      "estimatedPrice": 450,
+      "commissionId": 2,
+      "isResponded": true,
+      "status": "pending",
+      "id": 4
     }
   ]
 }

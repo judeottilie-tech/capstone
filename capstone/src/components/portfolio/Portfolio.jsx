@@ -91,12 +91,16 @@ export const Portfolio = ({ currentArtist }) => {
     getTags().then(setTags)
   }, [])
 
+  const activeCommissions = commissions.filter(
+    (commission) => commission.isActive,
+  )
+
   const filteredCommissions =
     selectedTag === 0
-      ? commissions
-      : commissions.filter((commission) => {
+      ? activeCommissions
+      : activeCommissions.filter((commission) => {
           return commission.commissionTags?.some(
-            (ct) => ct.tagId === selectedTag,
+            (commissionTag) => commissionTag.tagId === selectedTag,
           )
         })
 
@@ -155,7 +159,7 @@ export const Portfolio = ({ currentArtist }) => {
 
       <div className="mb-4">
         <select
-          onChange={(e) => setSelectedTag(parseInt(e.target.value))}
+          onChange={(event) => setSelectedTag(parseInt(event.target.value))}
           className="border border-neutral-border rounded-pill px-5 py-1 text-sm text-blue-dark bg-white"
         >
           <option value={0}>all</option>
