@@ -43,12 +43,25 @@ export const CommissionDetail = ({ currentArtist }) => {
     <div className="min-h-screen bg-neutral-soft p-6">
       <div className="max-w-3xl mx-auto">
         {/* back button */}
-        <button
-          onClick={() => navigate(-1)}
-          className="text-sm text-blue-mid hover:text-blue-dark mb-6 flex items-center gap-1 transition"
-        >
-          ← back
-        </button>
+        <div className="flex justify-between items-center mb-6">
+          <button
+            onClick={() => navigate(-1)}
+            className="text-sm text-blue-mid hover:text-blue-dark flex items-center gap-1 transition"
+          >
+            ← back
+          </button>
+
+          {currentArtist?.id === commission.artistId && (
+            <button
+              onClick={() =>
+                navigate(`/dashboard/commission/${commission.id}/edit`)
+              }
+              className="text-xs flex grid grid-cols-1 md:grid-cols-1 bg-blue-light text-blue-dark px-3 py-1 rounded-pill hover:bg-blue-mid transition"
+            >
+              edit this commission
+            </button>
+          )}
+        </div>
 
         <div className="bg-white border border-neutral-border rounded-2xl overflow-hidden">
           {commission.images.length > 0 && (

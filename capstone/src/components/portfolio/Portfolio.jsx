@@ -82,7 +82,9 @@ export const Portfolio = ({ currentArtist }) => {
         const artistObj = artistArray[0]
         setArtist(artistObj)
 
-        getCommissionsByArtist(artistObj.id).then(setCommissions)
+        getCommissionsByArtist(artistObj.id).then((data) => {
+          setCommissions(data.sort((a, b) => a.order - b.order))
+        })
       }
     })
   }, [username])

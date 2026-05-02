@@ -16,7 +16,6 @@ export const Proposals = ({ currentArtist }) => {
     fetchProposals()
   }, [currentArtist])
 
-  // SORT
   const sortedProposals = [...proposals].sort((a, b) => {
     const order = {
       pending: 0,
@@ -31,7 +30,6 @@ export const Proposals = ({ currentArtist }) => {
     return order[a.status] - order[b.status]
   })
 
-  // GROUPING (accepted stays active)
   const activeProposals = sortedProposals.filter(
     (proposal) =>
       proposal.status !== "denied" && proposal.status !== "complete",
@@ -51,6 +49,7 @@ export const Proposals = ({ currentArtist }) => {
     }).then(fetchProposals)
   }
 
+  
   const handleToggleResponded = (proposal) => {
     const { commission, ...proposalToSave } = proposal
 
@@ -61,6 +60,10 @@ export const Proposals = ({ currentArtist }) => {
   }
 
   const handleDelete = (proposalId) => {
+    const confirmed = window.confirm(
+      "are you sure you want to delete this proposal?",
+    )
+    if (!confirmed) return
     deleteProposal(proposalId).then(fetchProposals)
   }
 
@@ -162,6 +165,12 @@ export const Proposals = ({ currentArtist }) => {
             <option value="in progress">in progress</option>
             <option value="complete">complete</option>
           </select>
+          <button
+            onClick={() => handleDelete(proposal.id)}
+            className="ml-auto text-xs bg-pink-light text-pink-dark px-3 py-1 rounded-pill hover:bg-pink-mid transition"
+          >
+            delete
+          </button>
         </div>
       </div>
     )

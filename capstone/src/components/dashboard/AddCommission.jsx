@@ -46,6 +46,7 @@ export const AddCommission = ({ currentArtist }) => {
       artistId: currentArtist.id,
       isActive: true,
       slots: 3,
+      order: Date.now(),
       pricingOptions: commission.pricingOptions,
     }
 

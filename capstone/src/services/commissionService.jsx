@@ -27,6 +27,7 @@ export const createCommission = (commission) => {
 }
 
 export const updateCommission = (commission) => {
+  const { commissionTags, proposals, artist, ...commissionToSave } = commission
   return fetch(`http://localhost:8088/commissions/${commission.id}`, {
     method: "PUT",
     headers: {

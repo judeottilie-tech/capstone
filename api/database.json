@@ -5,25 +5,25 @@
       "fullName": "Jude!",
       "email": "jude@art.com",
       "username": "judeottilie",
-      "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets. hehe",
+      "bio": "Graphic artist specializing in digital illustration, tattoo design, and drawing beloved pets.",
       "profileLink": "https://instagram.com/judeottilie",
       "profileImageUrl": "https://u.cubeupload.com/pinkcupid/icon.png"
     },
     {
+      "id": 2,
       "fullName": "kitty",
       "username": "cat",
       "email": "kitty@cat.com",
       "bio": "",
-      "profileLink": "",
-      "id": 2
+      "profileLink": ""
     },
     {
+      "id": 3,
       "fullName": "me",
       "username": "meme",
       "email": "me@me.com",
       "bio": "",
-      "profileLink": "",
-      "id": 3
+      "profileLink": ""
     }
   ],
   "commissions": [
@@ -38,39 +38,61 @@
       "artistId": 1,
       "isActive": true,
       "slots": 3,
+      "order": 1,
       "pricingOptions": {
         "extraCharacterPercent": 25,
         "backgroundPercent": 50
       },
+      "commissionTags": [
+        {
+          "id": 1,
+          "commissionId": 2,
+          "tagId": 7
+        },
+        {
+          "id": 2,
+          "commissionId": 2,
+          "tagId": 11
+        }
+      ],
       "proposals": [
         {
           "id": 1,
           "contactEmail": "hehe@haha.com",
           "description": "draw this pghghtb",
-          "selectedOptions": "",
-          "estimatedPrice": "",
+          "estimatedPrice": 0,
           "referenceImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr_-62a40u3lSIyRP5EKOjJeQiZROwTeVCOQ&s",
           "commissionId": 2,
           "isResponded": true,
           "status": "complete"
         },
         {
+          "id": 3,
           "contactEmail": "kitty@cat.com",
           "description": "a big kitty",
           "referenceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mudball_%282017_photo%3B_cropped_2022%29.jpg",
           "estimatedPrice": 450,
           "commissionId": 2,
           "isResponded": false,
-          "status": "in progress",
-          "id": 3
+          "status": "pending"
+        },
+        {
+          "id": 4,
+          "contactEmail": "hi@hi.com",
+          "description": "id like a cat",
+          "referenceImageUrl": "https://u.cubeupload.com/pinkcupid/runekitty.png",
+          "estimatedPrice": 450,
+          "commissionId": 2,
+          "isResponded": true,
+          "status": "pending"
         }
       ]
     },
     {
       "id": 3,
       "title": "Pet Sketch",
-      "price": 10,
       "description": "Quick sketch of your pet.",
+      "price": 10,
       "images": [
         "https://u.cubeupload.com/pinkcupid/runekitty.png",
         "https://u.cubeupload.com/pinkcupid/caelankittiez.png"
@@ -78,20 +100,21 @@
       "artistId": 1,
       "isActive": true,
       "slots": 3,
+      "order": 2,
       "pricingOptions": {
         "extraCharacterPercent": 25,
         "backgroundPercent": 50
       },
       "commissionTags": [
         {
+          "id": 3,
           "commissionId": 3,
-          "tagId": 11,
-          "id": 3
+          "tagId": 11
         },
         {
+          "id": 4,
           "commissionId": 3,
-          "tagId": 7,
-          "id": 4
+          "tagId": 7
         }
       ],
       "proposals": [
@@ -99,28 +122,13 @@
           "id": 2,
           "contactEmail": "lol@lol.com",
           "description": "can you peieurjfjgfkfdlgkjfd",
-          "selectedOptions": "",
-          "estimatedPrice": "",
+          "estimatedPrice": 0,
           "referenceImageUrl": "https://www.catster.com/wp-content/uploads/2023/11/big-shaggy-cat-is-very-funny-standing-with-grooming-tools_Popel-Arseniy_Shutterstock.jpg",
           "commissionId": 3,
           "isResponded": true,
-          "status": "sketching"
+          "status": "accepted"
         }
       ]
-    }
-  ],
-  "tags": [
-    {
-      "id": 1,
-      "name": "digital"
-    },
-    {
-      "id": 7,
-      "name": "illustration"
-    },
-    {
-      "id": 11,
-      "name": "pet"
     }
   ],
   "commissionTags": [
@@ -135,14 +143,116 @@
       "tagId": 11
     },
     {
+      "id": 3,
       "commissionId": 3,
-      "tagId": 11,
-      "id": 3
+      "tagId": 11
     },
     {
+      "id": 4,
       "commissionId": 3,
-      "tagId": 7,
-      "id": 4
+      "tagId": 7
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "digital"
+    },
+    {
+      "id": 2,
+      "name": "traditional"
+    },
+    {
+      "id": 3,
+      "name": "mixed media"
+    },
+    {
+      "id": 4,
+      "name": "clay"
+    },
+    {
+      "id": 5,
+      "name": "sculpture"
+    },
+    {
+      "id": 6,
+      "name": "animated"
+    },
+    {
+      "id": 7,
+      "name": "illustration"
+    },
+    {
+      "id": 8,
+      "name": "graphic design"
+    },
+    {
+      "id": 9,
+      "name": "icon"
+    },
+    {
+      "id": 10,
+      "name": "logo"
+    },
+    {
+      "id": 11,
+      "name": "pet"
+    },
+    {
+      "id": 12,
+      "name": "portrait"
+    },
+    {
+      "id": 13,
+      "name": "couple portrait"
+    },
+    {
+      "id": 14,
+      "name": "character"
+    },
+    {
+      "id": 15,
+      "name": "fantasy"
+    },
+    {
+      "id": 16,
+      "name": "watercolor"
+    },
+    {
+      "id": 17,
+      "name": "anime"
+    },
+    {
+      "id": 18,
+      "name": "tattoo design"
+    },
+    {
+      "id": 19,
+      "name": "tattoo flash"
+    },
+    {
+      "id": 20,
+      "name": "chibi"
+    },
+    {
+      "id": 21,
+      "name": "pixel art"
+    },
+    {
+      "id": 22,
+      "name": "sticker"
+    },
+    {
+      "id": 23,
+      "name": "reference sheet"
+    },
+    {
+      "id": 24,
+      "name": "landscape"
+    },
+    {
+      "id": 25,
+      "name": "fan art"
     }
   ],
   "proposals": [
@@ -150,8 +260,7 @@
       "id": 1,
       "contactEmail": "hehe@haha.com",
       "description": "draw this pghghtb",
-      "selectedOptions": "",
-      "estimatedPrice": "",
+      "estimatedPrice": 0,
       "referenceImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr_-62a40u3lSIyRP5EKOjJeQiZROwTeVCOQ&s",
       "commissionId": 2,
       "isResponded": true,
@@ -161,32 +270,31 @@
       "id": 2,
       "contactEmail": "lol@lol.com",
       "description": "can you peieurjfjgfkfdlgkjfd",
-      "selectedOptions": "",
-      "estimatedPrice": "",
+      "estimatedPrice": 0,
       "referenceImageUrl": "https://www.catster.com/wp-content/uploads/2023/11/big-shaggy-cat-is-very-funny-standing-with-grooming-tools_Popel-Arseniy_Shutterstock.jpg",
       "commissionId": 3,
       "isResponded": true,
-      "status": "sketching"
+      "status": "accepted"
     },
     {
+      "id": 3,
       "contactEmail": "kitty@cat.com",
       "description": "a big kitty",
       "referenceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mudball_%282017_photo%3B_cropped_2022%29.jpg",
       "estimatedPrice": 450,
       "commissionId": 2,
       "isResponded": false,
-      "status": "pending",
-      "id": 3
+      "status": "pending"
     },
     {
+      "id": 4,
       "contactEmail": "hi@hi.com",
       "description": "id like a cat",
       "referenceImageUrl": "https://u.cubeupload.com/pinkcupid/runekitty.png",
       "estimatedPrice": 450,
       "commissionId": 2,
       "isResponded": true,
-      "status": "pending",
-      "id": 4
+      "status": "pending"
     }
   ]
 }
