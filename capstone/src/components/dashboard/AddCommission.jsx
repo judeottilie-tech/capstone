@@ -12,10 +12,6 @@ export const AddCommission = ({ currentArtist }) => {
     price: "",
     description: "",
     images: [],
-    pricingOptions: {
-      extraCharacterPercent: 25,
-      backgroundPercent: 50,
-    },
   })
 
   const [imageInputValue, setImageInputValue] = useState("")
@@ -47,18 +43,17 @@ export const AddCommission = ({ currentArtist }) => {
       isActive: true,
       slots: 3,
       order: Date.now(),
-      pricingOptions: commission.pricingOptions,
     }
 
     createCommission(newCommission).then((createdCommission) => {
       const uniqueTagIds = [...new Set(selectedTagIds)]
 
-      const tagPromises = uniqueTagIds.map((tagId) => {
-        return createCommissionTag({
+      const tagPromises = uniqueTagIds.map((tagId) =>
+        createCommissionTag({
           commissionId: createdCommission.id,
           tagId: tagId,
-        })
-      })
+        }),
+      )
 
       Promise.all(tagPromises).then(() => {
         navigate("/dashboard")
@@ -90,8 +85,8 @@ export const AddCommission = ({ currentArtist }) => {
               <input
                 type="text"
                 value={commission.title}
-                onChange={(e) =>
-                  setCommission({ ...commission, title: e.target.value })
+                onChange={(event) =>
+                  setCommission({ ...commission, title: event.target.value })
                 }
                 placeholder="add commission title"
                 className="w-full border border-neutral-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark placeholder:text-blue-mid focus:border-pink-main"
@@ -105,8 +100,8 @@ export const AddCommission = ({ currentArtist }) => {
               <input
                 type="number"
                 value={commission.price}
-                onChange={(e) =>
-                  setCommission({ ...commission, price: e.target.value })
+                onChange={(event) =>
+                  setCommission({ ...commission, price: event.target.value })
                 }
                 placeholder="base price"
                 className="w-full border border-neutral-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark placeholder:text-blue-mid focus:border-pink-main"
@@ -119,8 +114,11 @@ export const AddCommission = ({ currentArtist }) => {
               </label>
               <textarea
                 value={commission.description}
-                onChange={(e) =>
-                  setCommission({ ...commission, description: e.target.value })
+                onChange={(event) =>
+                  setCommission({
+                    ...commission,
+                    description: event.target.value,
+                  })
                 }
                 placeholder="describe this commission type..."
                 rows={3}
@@ -136,7 +134,7 @@ export const AddCommission = ({ currentArtist }) => {
                 <input
                   type="text"
                   value={imageInputValue}
-                  onChange={(e) => setImageInputValue(e.target.value)}
+                  onChange={(event) => setImageInputValue(event.target.value)}
                   placeholder="https://..."
                   className="w-full border border-neutral-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark placeholder:text-blue-mid focus:border-pink-main"
                 />
@@ -171,7 +169,7 @@ export const AddCommission = ({ currentArtist }) => {
                           setCommission({
                             ...commission,
                             images: commission.images.filter(
-                              (_, i) => i !== index,
+                              (_, imageIndex) => imageIndex !== index,
                             ),
                           })
                         }}
@@ -183,50 +181,6 @@ export const AddCommission = ({ currentArtist }) => {
                   ))}
                 </div>
               )}
-            </div>
-
-            <div className="bg-neutral-soft border border-neutral-border rounded-xl p-4 flex flex-col gap-3">
-              <p className="text-xs text-pink-mid font-semibold">
-                pricing add-ons
-              </p>
-              <div>
-                <label className="text-xs text-blue-mid mb-1 block">
-                  extra character %
-                </label>
-                <input
-                  type="number"
-                  value={commission.pricingOptions.extraCharacterPercent}
-                  onChange={(e) =>
-                    setCommission({
-                      ...commission,
-                      pricingOptions: {
-                        ...commission.pricingOptions,
-                        extraCharacterPercent: parseFloat(e.target.value),
-                      },
-                    })
-                  }
-                  className="w-full border border-neutral-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark focus:border-pink-main"
-                />
-              </div>
-              <div>
-                <label className="text-xs text-blue-mid mb-1 block">
-                  background %
-                </label>
-                <input
-                  type="number"
-                  value={commission.pricingOptions.backgroundPercent}
-                  onChange={(e) =>
-                    setCommission({
-                      ...commission,
-                      pricingOptions: {
-                        ...commission.pricingOptions,
-                        backgroundPercent: parseFloat(e.target.value),
-                      },
-                    })
-                  }
-                  className="w-full border border-neutral-border rounded-pill px-4 py-2 text-sm outline-none text-blue-dark focus:border-pink-main"
-                />
-              </div>
             </div>
 
             <div>
@@ -241,11 +195,16 @@ export const AddCommission = ({ currentArtist }) => {
                         checked={isSelected}
                         onChange={() => {
                           if (isSelected) {
-                            setSelectedTagIds((prev) =>
-                              prev.filter((id) => id !== tag.id),
+                            setSelectedTagIds((previousTagIds) =>
+                              previousTagIds.filter(
+                                (existingTagId) => existingTagId !== tag.id,
+                              ),
                             )
                           } else {
-                            setSelectedTagIds((prev) => [...prev, tag.id])
+                            setSelectedTagIds((previousTagIds) => [
+                              ...previousTagIds,
+                              tag.id,
+                            ])
                           }
                         }}
                         className="hidden"

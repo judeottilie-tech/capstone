@@ -30,127 +30,146 @@
     {
       "id": 2,
       "title": "Pet Illustration",
-      "description": "Full pet illustration with background.",
       "price": 300,
+      "description": "Full pet illustration with background.",
       "images": [
         "https://u.cubeupload.com/pinkcupid/IMG5658.jpeg"
       ],
       "artistId": 1,
       "isActive": true,
       "slots": 3,
-      "order": 1,
       "pricingOptions": {
-        "extraCharacterPercent": 25,
+        "extraCharacterPercent": 50,
         "backgroundPercent": 50
-      },
-      "commissionTags": [
-        {
-          "id": 1,
-          "commissionId": 2,
-          "tagId": 7
-        },
-        {
-          "id": 2,
-          "commissionId": 2,
-          "tagId": 11
-        }
-      ],
-      "proposals": [
-        {
-          "id": 1,
-          "contactEmail": "hehe@haha.com",
-          "description": "draw this pghghtb",
-          "estimatedPrice": 0,
-          "referenceImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr_-62a40u3lSIyRP5EKOjJeQiZROwTeVCOQ&s",
-          "commissionId": 2,
-          "isResponded": true,
-          "status": "complete"
-        },
-        {
-          "id": 3,
-          "contactEmail": "kitty@cat.com",
-          "description": "a big kitty",
-          "referenceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mudball_%282017_photo%3B_cropped_2022%29.jpg",
-          "estimatedPrice": 450,
-          "commissionId": 2,
-          "isResponded": false,
-          "status": "pending"
-        },
-        {
-          "id": 4,
-          "contactEmail": "hi@hi.com",
-          "description": "id like a cat",
-          "referenceImageUrl": "https://u.cubeupload.com/pinkcupid/runekitty.png",
-          "estimatedPrice": 450,
-          "commissionId": 2,
-          "isResponded": true,
-          "status": "pending"
-        }
-      ]
+      }
     },
     {
       "id": 3,
       "title": "Pet Sketch",
-      "description": "Quick sketch of your pet.",
       "price": 10,
+      "description": "Quick sketch of your pet. Will be digital, file size varies. Style is up to artist discretion. Please provide clear reference photo of your pet as the final product will be based on that. Can be any animal as long as reference is provided. Background will be simple.",
       "images": [
         "https://u.cubeupload.com/pinkcupid/runekitty.png",
-        "https://u.cubeupload.com/pinkcupid/caelankittiez.png"
+        "https://u.cubeupload.com/pinkcupid/caelankittiez.png",
+        "https://u.cubeupload.com/pinkcupid/D1E46A29994A46AB9C1A.jpg",
+        "https://u.cubeupload.com/pinkcupid/IMG1946.jpeg"
       ],
       "artistId": 1,
       "isActive": true,
       "slots": 3,
-      "order": 2,
       "pricingOptions": {
         "extraCharacterPercent": 25,
+        "backgroundPercent": 0
+      },
+      "order": 1777837915681
+    },
+    {
+      "title": "Pet Portrait",
+      "description": "Digital pet portrait. Painterly style, 8.5x11, can be any kind of animal. Please send accurate and clear reference photo of pet. Finished product will be heavily based upon reference provided.",
+      "price": 65,
+      "images": [
+        "https://u.cubeupload.com/pinkcupid/petportrait.png",
+        "https://u.cubeupload.com/pinkcupid/IMG1510.jpg"
+      ],
+      "artistId": 1,
+      "isActive": true,
+      "slots": 3,
+      "pricingOptions": {
+        "extraCharacterPercent": 50,
         "backgroundPercent": 50
       },
-      "commissionTags": [
-        {
-          "id": 3,
-          "commissionId": 3,
-          "tagId": 11
-        },
-        {
-          "id": 4,
-          "commissionId": 3,
-          "tagId": 7
-        }
+      "id": 4,
+      "order": 1
+    },
+    {
+      "title": "Sticker Sheet",
+      "description": "Multiple drawing sticker sheet. Will provide files for printing through sticker vendors. Sizing and spacing based on stickerninja.com requirements unless requested otherwise. ",
+      "price": 200,
+      "images": [
+        "https://u.cubeupload.com/pinkcupid/IMG7501.jpeg",
+        "https://u.cubeupload.com/pinkcupid/violetachrisstickers.png"
       ],
-      "proposals": [
-        {
-          "id": 2,
-          "contactEmail": "lol@lol.com",
-          "description": "can you peieurjfjgfkfdlgkjfd",
-          "estimatedPrice": 0,
-          "referenceImageUrl": "https://www.catster.com/wp-content/uploads/2023/11/big-shaggy-cat-is-very-funny-standing-with-grooming-tools_Popel-Arseniy_Shutterstock.jpg",
-          "commissionId": 3,
-          "isResponded": true,
-          "status": "accepted"
-        }
-      ]
+      "artistId": 1,
+      "isActive": true,
+      "slots": 3,
+      "pricingOptions": {
+        "extraCharacterPercent": 25,
+        "backgroundPercent": 25
+      },
+      "id": 5,
+      "order": 1777837915681
     }
   ],
   "commissionTags": [
     {
-      "id": 1,
-      "commissionId": 2,
-      "tagId": 7
+      "commissionId": 4,
+      "tagId": 1,
+      "id": 5
     },
     {
-      "id": 2,
-      "commissionId": 2,
-      "tagId": 11
+      "commissionId": 4,
+      "tagId": 7,
+      "id": 6
     },
     {
-      "id": 3,
+      "commissionId": 4,
+      "tagId": 11,
+      "id": 7
+    },
+    {
+      "commissionId": 4,
+      "tagId": 12,
+      "id": 8
+    },
+    {
       "commissionId": 3,
-      "tagId": 11
+      "tagId": 11,
+      "id": 9
     },
     {
-      "id": 4,
       "commissionId": 3,
-      "tagId": 7
+      "tagId": 7,
+      "id": 10
+    },
+    {
+      "commissionId": 3,
+      "tagId": 1,
+      "id": 11
+    },
+    {
+      "commissionId": 5,
+      "tagId": 1,
+      "id": 12
+    },
+    {
+      "commissionId": 5,
+      "tagId": 22,
+      "id": 13
+    },
+    {
+      "commissionId": 2,
+      "tagId": 7,
+      "id": 14
+    },
+    {
+      "commissionId": 2,
+      "tagId": 11,
+      "id": 15
+    },
+    {
+      "commissionId": 2,
+      "tagId": 2,
+      "id": 16
+    },
+    {
+      "commissionId": 2,
+      "tagId": 3,
+      "id": 17
+    },
+    {
+      "commissionId": 2,
+      "tagId": 3,
+      "id": 18
     }
   ],
   "tags": [
@@ -267,16 +286,6 @@
       "status": "complete"
     },
     {
-      "id": 2,
-      "contactEmail": "lol@lol.com",
-      "description": "can you peieurjfjgfkfdlgkjfd",
-      "estimatedPrice": 0,
-      "referenceImageUrl": "https://www.catster.com/wp-content/uploads/2023/11/big-shaggy-cat-is-very-funny-standing-with-grooming-tools_Popel-Arseniy_Shutterstock.jpg",
-      "commissionId": 3,
-      "isResponded": true,
-      "status": "accepted"
-    },
-    {
       "id": 3,
       "contactEmail": "kitty@cat.com",
       "description": "a big kitty",
@@ -294,7 +303,7 @@
       "estimatedPrice": 450,
       "commissionId": 2,
       "isResponded": true,
-      "status": "pending"
+      "status": "accepted"
     }
   ]
 }

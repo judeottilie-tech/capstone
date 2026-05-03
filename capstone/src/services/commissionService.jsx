@@ -12,7 +12,7 @@ export const getCommissionById = (id) => {
 
 export const getCommissionsByArtist = (artistId) => {
   return fetch(
-    `http://localhost:8088/commissions?artistId=${artistId}&_embed=commissionTags&_embed=proposals`,
+    `http://localhost:8088/commissions?artistId=${artistId}&_embed=commissionTags`,
   ).then((res) => res.json())
 }
 
@@ -28,12 +28,11 @@ export const createCommission = (commission) => {
 
 export const updateCommission = (commission) => {
   const { commissionTags, proposals, artist, ...commissionToSave } = commission
+
   return fetch(`http://localhost:8088/commissions/${commission.id}`, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(commission),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(commissionToSave),
   }).then((res) => res.json())
 }
 

@@ -130,7 +130,7 @@ export const Portfolio = ({ currentArtist }) => {
                 <img
                   src={artist.profileImageUrl}
                   alt="profile"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               ) : (
                 <div className="w-full h-full bg-blue-light flex items-center justify-center text-xl text-blue-dark font-bold">

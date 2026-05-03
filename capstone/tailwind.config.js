@@ -26,6 +26,12 @@ export default {
           main: "#919191",
           dark: "#4d4d4d",
         },
+        green: {
+          light: "#cceebf",
+          mid: "#a8d496",
+          main: "#87bb73",
+          dark: "#50813c",
+        },
       },
       borderRadius: {
         pill: "9999px",

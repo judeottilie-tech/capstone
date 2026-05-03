@@ -122,18 +122,19 @@ export const Proposals = ({ currentArtist }) => {
         </div>
 
         <p className="text-sm text-blue-dark">{proposal.description}</p>
-
+        {/*
         {proposal.estimatedPrice && (
           <p className="text-xs text-blue-mid">
             estimate: ${proposal.estimatedPrice}
           </p>
         )}
+        */}
 
         {proposal.referenceImageUrl && (
           <img
             src={proposal.referenceImageUrl}
             alt="reference"
-            className="max-h-32 rounded-xl object-cover"
+            className="max-h-32 max-w-32 rounded-xl object-cover"
           />
         )}
 
@@ -158,11 +159,9 @@ export const Proposals = ({ currentArtist }) => {
             <option value="pending">pending</option>
             <option value="accepted">accepted</option>
             <option value="denied">denied</option>
-            <option value="sketching">sketching</option>
             <option value="awaiting response">
               awaiting response from commissioner
             </option>
-            <option value="in progress">in progress</option>
             <option value="complete">complete</option>
           </select>
           <button

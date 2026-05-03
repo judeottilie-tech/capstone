@@ -3,8 +3,10 @@ import { createProposal } from "../../services/proposalService"
 
 export const ProposalForm = ({ commission }) => {
   const [submitted, setSubmitted] = useState(false)
+  /*
   const [characterCount, setCharacterCount] = useState(1)
   const [hasBackground, setHasBackground] = useState(false)
+  */
 
   const [proposal, setProposal] = useState({
     contactEmail: "",
@@ -13,13 +15,13 @@ export const ProposalForm = ({ commission }) => {
     estimatedPrice: "",
     referenceImageUrl: "",
   })
-
+/*
   const base = commission?.basePrice || commission?.price || 0
   const extraCharacters = Math.max(characterCount - 1, 0)
 
   let estimate = base + base * 0.25 * extraCharacters
   if (hasBackground) estimate += base * 0.5
-
+*/
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -71,14 +73,10 @@ export const ProposalForm = ({ commission }) => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <h2 className="text-lg font-bold text-blue-dark">
-        request a commission
-      </h2>
+      <h2 className="text-lg font-bold text-blue-dark">request a commission</h2>
 
       <div>
-        <label className="text-xs text-blue-mid mb-1 block">
-          your email *
-        </label>
+        <label className="text-xs text-blue-mid mb-1 block">your email *</label>
         <input
           type="email"
           required
@@ -134,7 +132,7 @@ export const ProposalForm = ({ commission }) => {
           />
         )}
       </div>
-
+      {/*
       <div className="bg-neutral-soft border border-neutral-border rounded-xl p-4">
         <p className="text-sm font-semibold text-blue-dark mb-2">
           price estimator
@@ -168,7 +166,7 @@ export const ProposalForm = ({ commission }) => {
           est: ${Math.round(estimate)}
         </p>
       </div>
-
+      */}
       <button
         type="submit"
         className="bg-pink-main text-white rounded-pill px-4 py-2 text-sm hover:bg-pink-dark transition"

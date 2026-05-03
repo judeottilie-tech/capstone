@@ -35,7 +35,7 @@ export const Dashboard = ({ currentArtist }) => {
   const location = useLocation()
 
   const fetchCommissions = () => {
-    getCommissionsByArtist(currentArtist.id).then((data) => {
+    return getCommissionsByArtist(currentArtist.id).then((data) => {
       setCommissions(data.sort((a, b) => a.order - b.order))
     })
   }
@@ -66,30 +66,6 @@ export const Dashboard = ({ currentArtist }) => {
     }).then(fetchCommissions)
   }
 
-  const handleMoveUp = (index) => {
-    if (index === 0) return
-
-    const above = commissions[index - 1]
-    const current = commissions[index]
-
-    Promise.all([
-      updateCommission({ ...current, order: above.order }),
-      updateCommission({ ...above, order: current.order }),
-    ]).then(fetchCommissions)
-  }
-
-  const handleMoveDown = (index) => {
-    if (index === commissions.length - 1) return
-
-    const below = commissions[index + 1]
-    const current = commissions[index]
-
-    Promise.all([
-      updateCommission({ ...current, order: below.order }),
-      updateCommission({ ...below, order: current.order }),
-    ]).then(fetchCommissions)
-  }
-
   return (
     <div className="min-h-screen bg-neutral-soft p-6">
       <div className="max-w-3xl mx-auto">
@@ -106,31 +82,13 @@ export const Dashboard = ({ currentArtist }) => {
         </div>
 
         <div className="flex flex-col gap-4">
-          {commissions.map((commission, index) => (
+          {commissions.map((commission) => (
             <div
               key={commission.id}
               className="bg-white border border-neutral-border rounded-xl p-4 flex justify-between items-center gap-3"
             >
 
               <div className="flex items-center gap-3 flex-1 min-w-0">
-
-                <div className="flex flex-col gap-1 flex-shrink-0">
-                  <button
-                    onClick={() => handleMoveUp(index)}
-                    disabled={index === 0}
-                    className="text-blue-mid hover:text-blue-dark disabled:opacity-20 text-xs leading-none"
-                  >
-                    ▲
-                  </button>
-                  <button
-                    onClick={() => handleMoveDown(index)}
-                    disabled={index === commissions.length - 1}
-                    className="text-blue-mid hover:text-blue-dark disabled:opacity-20 text-xs leading-none"
-                  >
-                    ▼
-                  </button>
-                </div>
-
                 <div
                   className="cursor-pointer"
                   onClick={() => navigate(`/commission/${commission.id}`)}
@@ -156,8 +114,8 @@ export const Dashboard = ({ currentArtist }) => {
                   onClick={() => handleToggleActive(commission)}
                   className={`text-xs px-3 py-1 rounded-pill transition ${
                     commission.isActive
-                      ? "bg-blue-light text-blue-dark hover:bg-blue-mid"
-                      : "bg-neutral-border text-blue-mid hover:bg-blue-light"
+                      ? "bg-green-light text-green-dark hover:bg-gray-light"
+                      : "bg-gray-light text-gray-mid hover:bg-green-light"
                   }`}
                 >
                   {commission.isActive ? "active" : "inactive"}
