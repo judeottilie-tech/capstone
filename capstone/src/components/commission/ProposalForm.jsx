@@ -12,7 +12,7 @@ export const ProposalForm = ({ commission }) => {
     contactEmail: "",
     description: "",
     selectedOptions: "",
-    estimatedPrice: "",
+    //estimatedPrice: "",
     referenceImageUrl: "",
   })
 /*
@@ -43,7 +43,7 @@ export const ProposalForm = ({ commission }) => {
       description: proposal.description,
       referenceImageUrl: proposal.referenceImageUrl,
 
-      estimatedPrice: Math.round(estimate), 
+      //estimatedPrice: Math.round(estimate), 
 
       commissionId: commission.id,
       isResponded: false,

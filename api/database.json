@@ -24,6 +24,14 @@
       "email": "me@me.com",
       "bio": "",
       "profileLink": ""
+    },
+    {
+      "fullName": "Punchy",
+      "username": "punchy",
+      "email": "punchy@gmail.com",
+      "bio": "",
+      "profileLink": "",
+      "id": 4
     }
   ],
   "commissions": [
@@ -38,10 +46,7 @@
       "artistId": 1,
       "isActive": true,
       "slots": 3,
-      "pricingOptions": {
-        "extraCharacterPercent": 50,
-        "backgroundPercent": 50
-      }
+      "order": 1
     },
     {
       "id": 3,
@@ -51,125 +56,222 @@
       "images": [
         "https://u.cubeupload.com/pinkcupid/runekitty.png",
         "https://u.cubeupload.com/pinkcupid/caelankittiez.png",
-        "https://u.cubeupload.com/pinkcupid/D1E46A29994A46AB9C1A.jpg",
-        "https://u.cubeupload.com/pinkcupid/IMG1946.jpeg"
+        "https://u.cubeupload.com/pinkcupid/IMG8839.jpg",
+        "https://u.cubeupload.com/pinkcupid/IMG8837.jpg",
+        "https://media.licdn.com/dms/image/v2/D4E2DAQE1cnqfCaeYhQ/profile-treasury-image-shrink_480_480/B4EZorzWagIwAM-/0/1761671476191?e=1778450400&v=beta&t=rpIwLVk4pdvhWcecESSL9Ty_9In2ofBMysc-Jok4OSI",
+        "https://media.licdn.com/dms/image/v2/D4E2DAQFoSwTFniZurg/profile-treasury-image-shrink_480_480/B4EZorzfXwGcAU-/0/1761671511895?e=1778450400&v=beta&t=Ltne1jt2GkWzZM5y1zrotWqhXzYgq_2uBZLbkGEmzu0"
       ],
       "artistId": 1,
       "isActive": true,
       "slots": 3,
-      "pricingOptions": {
-        "extraCharacterPercent": 25,
-        "backgroundPercent": 0
-      },
-      "order": 1777837915681
+      "order": 3
     },
     {
+      "id": 4,
       "title": "Pet Portrait",
-      "description": "Digital pet portrait. Painterly style, 8.5x11, can be any kind of animal. Please send accurate and clear reference photo of pet. Finished product will be heavily based upon reference provided.",
       "price": 65,
+      "description": "Digital pet portrait. Your choice of painterly or line style, 8.5x11, can be any kind of animal. Please send accurate and clear reference photo of pet. Finished product will be heavily based upon reference provided. Additional pet is +50%",
       "images": [
         "https://u.cubeupload.com/pinkcupid/petportrait.png",
-        "https://u.cubeupload.com/pinkcupid/IMG1510.jpg"
+        "https://u.cubeupload.com/pinkcupid/IMG1510.jpg",
+        "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-41_orig.png",
+        "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/screen-shot-2023-07-21-at-7-54-56-pm_orig.png",
+        "https://u.cubeupload.com/pinkcupid/IMG8847.jpg",
+        "https://u.cubeupload.com/pinkcupid/IMG8848.jpg",
+        "https://u.cubeupload.com/pinkcupid/IMG8844.jpg",
+        "https://u.cubeupload.com/pinkcupid/IMG8846.jpg",
+        "https://u.cubeupload.com/pinkcupid/IMG8849.jpg"
       ],
       "artistId": 1,
       "isActive": true,
       "slots": 3,
-      "pricingOptions": {
-        "extraCharacterPercent": 50,
-        "backgroundPercent": 50
-      },
-      "id": 4,
-      "order": 1
+      "order": 2
     },
     {
+      "id": 5,
       "title": "Sticker Sheet",
-      "description": "Multiple drawing sticker sheet. Will provide files for printing through sticker vendors. Sizing and spacing based on stickerninja.com requirements unless requested otherwise. ",
       "price": 200,
+      "description": "Multiple drawing sticker sheet. Will provide files for printing through sticker vendors. Sizing and spacing based on stickerninja.com requirements unless requested otherwise.",
       "images": [
         "https://u.cubeupload.com/pinkcupid/IMG7501.jpeg",
-        "https://u.cubeupload.com/pinkcupid/violetachrisstickers.png"
+        "https://u.cubeupload.com/pinkcupid/violetachrisstickers.png",
+        "https://u.cubeupload.com/pinkcupid/IMG8843.jpg",
+        "https://u.cubeupload.com/pinkcupid/IMG8842.jpg",
+        "https://u.cubeupload.com/pinkcupid/IMG8840.jpg",
+        "https://u.cubeupload.com/pinkcupid/IMG8841.jpg"
       ],
       "artistId": 1,
       "isActive": true,
       "slots": 3,
-      "pricingOptions": {
-        "extraCharacterPercent": 25,
-        "backgroundPercent": 25
-      },
-      "id": 5,
-      "order": 1777837915681
+      "order": 4
+    },
+    {
+      "id": 6,
+      "title": "Character Portrait",
+      "price": 65,
+      "description": "Humanoid portrait commission. Can be a couple portrait if requested, add cost of 50% of the base price per character addition.",
+      "images": [
+        "https://u.cubeupload.com/pinkcupid/IMG1623.jpeg",
+        "https://u.cubeupload.com/pinkcupid/UntitledArtwork.png",
+        "https://u.cubeupload.com/pinkcupid/demon.png",
+        "https://u.cubeupload.com/pinkcupid/IMG1515.jpg",
+        "https://judeandersen.weebly.com/uploads/1/4/4/5/144596113/untitled-artwork-18_orig.png",
+        "https://u.cubeupload.com/pinkcupid/IMG8850.jpg"
+      ],
+      "artistId": 1,
+      "isActive": true,
+      "slots": 3,
+      "order": 5
+    },
+    {
+      "id": 7,
+      "title": "Sticker/T-shirt Design",
+      "price": 100,
+      "description": "Pricing will vary. Single sticker design, digital, sized for print. Can send vectorized versions at request.",
+      "images": [
+        "https://media.licdn.com/dms/image/v2/D4E2DAQFuEmxGCiFYLA/profile-treasury-image-shrink_800_800/B4EZoryr9GIIAY-/0/1761671302499?e=1778450400&v=beta&t=ksO7BSVqK5eQ1-3gvMl9EoYlyBGcvInWhGn3fRW783Q",
+        "https://media.licdn.com/dms/image/v2/D4E2DAQGivjKVV5AVJg/profile-treasury-image-shrink_800_800/B4EZorx20XHEAY-/0/1761671089425?e=1778450400&v=beta&t=7bGVqeo0HEs3mntI8DokQ0-8BiprFMQWBhSC6kni540",
+        "https://u.cubeupload.com/pinkcupid/logo.png"
+      ],
+      "artistId": 1,
+      "isActive": true,
+      "slots": 3,
+      "order": 6
+    },
+    {
+      "id": 8,
+      "title": "Icon",
+      "price": 50,
+      "description": "Icon of your character, square image compatible with most websites.",
+      "images": [
+        "https://u.cubeupload.com/pinkcupid/UntitledArtwork1.jpeg"
+      ],
+      "artistId": 1,
+      "isActive": false,
+      "slots": 3,
+      "order": 1777844712688
     }
   ],
   "commissionTags": [
     {
+      "id": 14,
+      "commissionId": 2,
+      "tagId": 7
+    },
+    {
+      "id": 15,
+      "commissionId": 2,
+      "tagId": 11
+    },
+    {
+      "id": 16,
+      "commissionId": 2,
+      "tagId": 2
+    },
+    {
+      "id": 17,
+      "commissionId": 2,
+      "tagId": 3
+    },
+    {
+      "id": 32,
       "commissionId": 4,
-      "tagId": 1,
-      "id": 5
+      "tagId": 1
     },
     {
+      "id": 33,
       "commissionId": 4,
-      "tagId": 7,
-      "id": 6
+      "tagId": 7
     },
     {
+      "id": 34,
       "commissionId": 4,
-      "tagId": 11,
-      "id": 7
+      "tagId": 11
     },
     {
+      "id": 35,
       "commissionId": 4,
-      "tagId": 12,
-      "id": 8
+      "tagId": 12
     },
     {
-      "commissionId": 3,
-      "tagId": 11,
-      "id": 9
-    },
-    {
-      "commissionId": 3,
-      "tagId": 7,
-      "id": 10
-    },
-    {
-      "commissionId": 3,
-      "tagId": 1,
-      "id": 11
-    },
-    {
+      "id": 37,
       "commissionId": 5,
-      "tagId": 1,
-      "id": 12
+      "tagId": 1
     },
     {
+      "id": 38,
       "commissionId": 5,
-      "tagId": 22,
-      "id": 13
+      "tagId": 22
     },
     {
-      "commissionId": 2,
-      "tagId": 7,
-      "id": 14
+      "id": 61,
+      "commissionId": 6,
+      "tagId": 9
     },
     {
-      "commissionId": 2,
-      "tagId": 11,
-      "id": 15
+      "id": 62,
+      "commissionId": 6,
+      "tagId": 12
     },
     {
-      "commissionId": 2,
-      "tagId": 2,
-      "id": 16
+      "id": 63,
+      "commissionId": 6,
+      "tagId": 14
     },
     {
-      "commissionId": 2,
-      "tagId": 3,
-      "id": 17
+      "id": 65,
+      "commissionId": 6,
+      "tagId": 1
     },
     {
-      "commissionId": 2,
-      "tagId": 3,
-      "id": 18
+      "id": 66,
+      "commissionId": 7,
+      "tagId": 1
+    },
+    {
+      "id": 67,
+      "commissionId": 7,
+      "tagId": 8
+    },
+    {
+      "id": 68,
+      "commissionId": 7,
+      "tagId": 17
+    },
+    {
+      "id": 69,
+      "commissionId": 7,
+      "tagId": 22
+    },
+    {
+      "id": 70,
+      "commissionId": 7,
+      "tagId": 10
+    },
+    {
+      "id": 71,
+      "commissionId": 3,
+      "tagId": 11
+    },
+    {
+      "id": 72,
+      "commissionId": 3,
+      "tagId": 7
+    },
+    {
+      "id": 73,
+      "commissionId": 3,
+      "tagId": 1
+    },
+    {
+      "commissionId": 8,
+      "tagId": 1,
+      "id": 74
+    },
+    {
+      "commissionId": 8,
+      "tagId": 9,
+      "id": 75
     }
   ],
   "tags": [
@@ -276,26 +378,6 @@
   ],
   "proposals": [
     {
-      "id": 1,
-      "contactEmail": "hehe@haha.com",
-      "description": "draw this pghghtb",
-      "estimatedPrice": 0,
-      "referenceImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr_-62a40u3lSIyRP5EKOjJeQiZROwTeVCOQ&s",
-      "commissionId": 2,
-      "isResponded": true,
-      "status": "complete"
-    },
-    {
-      "id": 3,
-      "contactEmail": "kitty@cat.com",
-      "description": "a big kitty",
-      "referenceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mudball_%282017_photo%3B_cropped_2022%29.jpg",
-      "estimatedPrice": 450,
-      "commissionId": 2,
-      "isResponded": false,
-      "status": "pending"
-    },
-    {
       "id": 4,
       "contactEmail": "hi@hi.com",
       "description": "id like a cat",
@@ -303,7 +385,34 @@
       "estimatedPrice": 450,
       "commissionId": 2,
       "isResponded": true,
-      "status": "accepted"
+      "status": "denied"
+    },
+    {
+      "contactEmail": "imaguywholikeshedgehogs@gmail.com",
+      "description": "hi, please draw sonic. thanks",
+      "referenceImageUrl": "https://www.freevector.com/uploads/vector/preview/4643/FreeVector-Sonic-The-Hedgehog.jpg",
+      "commissionId": 6,
+      "isResponded": false,
+      "status": "pending",
+      "id": 5
+    },
+    {
+      "contactEmail": "georgey@gmail.com",
+      "description": "id like you to make a sticker sheet of all original 151 pokemon. thanks!",
+      "referenceImageUrl": "https://trippystore.com/cdn/shop/products/posters-pokemon-kanto-151-poster-102106-30346291937333.jpg?v=1635277563",
+      "commissionId": 7,
+      "isResponded": false,
+      "status": "pending",
+      "id": 6
+    },
+    {
+      "contactEmail": "grammaboy@yahoo.com",
+      "description": "my gramma just adopted these puppies she found outside, please draw them so i can gift her the art for Christmas :)",
+      "referenceImageUrl": "https://scontent-atl3-3.xx.fbcdn.net/v/t39.30808-6/480461778_1019509420212239_8811175787328215278_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=a74216&_nc_ohc=N9k03sWzG94Q7kNvwEaCsbl&_nc_oc=Adq8xEnVqER85ncNpySrjtmyGhlVWlAP0hFdZCOLE9odqHZxhSwv85710FWdvQG1zA_ZagLS-oRNsN7mDYkUm-bS&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&_nc_gid=XuiLOsz7OSwQf2y9TErfMg&_nc_ss=7b2a8&oh=00_Af6i266XQbB5v_E_0uGsqbcx0RGGCNfhQdIV4zKhu69e6A&oe=69FD9BC0",
+      "commissionId": 4,
+      "isResponded": false,
+      "status": "pending",
+      "id": 7
     }
   ]
 }

@@ -109,7 +109,7 @@ export const Proposals = ({ currentArtist }) => {
           <span
             className={`text-xs px-3 py-1 rounded-pill font-medium ${
               proposal.status === "accepted"
-                ? "bg-blue-light text-blue-dark"
+                ? "bg-green-light text-green-dark"
                 : proposal.status === "denied"
                   ? "bg-pink-light text-pink-dark"
                   : proposal.status === "complete"

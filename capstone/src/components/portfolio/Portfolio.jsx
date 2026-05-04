@@ -15,7 +15,6 @@ const CommissionCard = ({ commissionObj, tags, navigate }) => {
       onClick={() => navigate(`/commission/${commissionObj.id}`)}
     >
       <div className="relative w-full h-48 rounded-md mb-2 overflow-hidden bg-pink-light">
-
         {!imageLoaded && commissionObj.images?.[0] && (
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-xs text-pink-mid animate-pulse">
@@ -47,19 +46,25 @@ const CommissionCard = ({ commissionObj, tags, navigate }) => {
       <p className="text-xs text-blue-mid mb-2">${commissionObj.price}</p>
 
       <div className="flex flex-wrap gap-1">
-        {commissionObj.commissionTags?.map((commissionTag) => {
-          const matchingTag = tags.find((tag) => tag.id === commissionTag.tagId)
-          if (!matchingTag) return null
-
-          return (
-            <span
-              key={`${commissionTag.id}-${commissionTag.tagId}`}
-              className="text-xs bg-pink-light text-pink-dark px-2 py-0.5 rounded-pill"
-            >
-              {matchingTag.name}
-            </span>
+        {commissionObj.commissionTags
+          ?.filter(
+            (commissionTag, index, self) =>
+              index === self.findIndex((t) => t.tagId === commissionTag.tagId),
           )
-        })}
+          .map((commissionTag) => {
+            const matchingTag = tags.find(
+              (tag) => tag.id === commissionTag.tagId,
+            )
+            if (!matchingTag) return null
+            return (
+              <span
+                key={`${commissionTag.id}-${commissionTag.tagId}`}
+                className="text-xs bg-pink-light text-pink-dark px-2 py-0.5 rounded-pill"
+              >
+                {matchingTag.name}
+              </span>
+            )
+          })}
       </div>
     </div>
   )
