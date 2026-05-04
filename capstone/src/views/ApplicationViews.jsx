@@ -9,6 +9,7 @@ import { EditCommission } from "../components/dashboard/EditCommission"
 import { EditProfile } from "../components/dashboard/EditProfile"
 import { Authorized } from "../views/Authorized"
 import { ScrollToTop } from "../views/ScrollToTop"
+import { CommissionDetail } from "../components/commission/CommissionDetail"
 
 export const ApplicationViews = () => {
   const [currentArtist, setCurrentArtist] = useState(null)
@@ -27,13 +28,12 @@ export const ApplicationViews = () => {
 
   if (isLoading) return null
 
-  console.log("currentArtist", currentArtist)
+  //console.log("currentArtist", currentArtist)
 
   //if (!currentArtist) return null
 
   return (
     <Routes>
-      <Route index element={<Navigate to="/dashboard" />} />
       <Route
         path="/"
         element={
@@ -44,11 +44,13 @@ export const ApplicationViews = () => {
           </>
         }
       >
+        
+        <Route index element={<Navigate to="/dashboard" />} />
+  
         <Route
           path="portfolio/:username"
           element={<Portfolio currentArtist={currentArtist} />}
         />
-
         <Route
           path="dashboard"
           element={
@@ -57,7 +59,6 @@ export const ApplicationViews = () => {
             </Authorized>
           }
         />
-
         <Route
           path="dashboard/add"
           element={
@@ -66,7 +67,6 @@ export const ApplicationViews = () => {
             </Authorized>
           }
         />
-
         <Route
           path="dashboard/commission/:id/edit"
           element={
@@ -75,7 +75,10 @@ export const ApplicationViews = () => {
             </Authorized>
           }
         />
-
+        <Route
+          path="commission/:id"
+          element={<CommissionDetail currentArtist={currentArtist} />}
+        />
         <Route
           path="dashboard/profile/edit"
           element={

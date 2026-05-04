@@ -38,7 +38,7 @@ export const NavBar = ({ currentArtist }) => {
         <ul className="hidden md:flex gap-3 items-center">
           <li>
             <NavLink to="/dashboard" className={desktopLinkStyles}>
-              Dashboard
+              dashboard
             </NavLink>
           </li>
           <li>
